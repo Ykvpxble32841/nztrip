@@ -48,50 +48,85 @@
     
     <!-- Tailwind 自定义工具类 - 必须在type为tailwindcss的style标签内 -->
   <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .card-hover {
-                transition: all 0.3s ease;
-            }
-            .card-hover:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-            .scroll-indicator {
-                height: 3px;
-                background-color: theme('colors.primary');
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 50;
-                width: 0%;
-            }
-            .sidebar-container {
-                position: relative;
-            }
-            .sidebar-sticky {
-                position: sticky;
-                top: 2rem;
-                max-height: calc(100vh - 4rem);
-                overflow-y: auto;
-                padding-right: 1rem;
-            }
-            .nested-comment {
-                margin-left: 1.5rem;
-                padding-left: 1.5rem;
-                border-left: 2px solid #e5e7eb;
-            }
-            
-            .text-indent-2 {
-                text-indent: 2em;
-            }
+ @layer utilities {
+        .content-auto {
+            content-visibility: auto;
         }
-     @layer utilities {
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .scroll-indicator {
+            height: 3px;
+            background-color: theme('colors.primary');
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            width: 0%;
+        }
+        .sidebar-container {
+            position: relative;
+        }
+        .sidebar-sticky {
+            position: sticky;
+            top: 2rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+        .nested-comment {
+            margin-left: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid #e5e7eb;
+        }
+        .text-indent-2 {
+            text-indent: 2em;
+        }
+
+        /* 弹窗核心样式：恢复移动端适配，取消过小限制 */
+        .reply-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: flex-start; /* 移动端顶部对齐，避免内容被截断 */
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1rem; /* 手机端留边，避免贴边 */
+        }
+        .reply-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .reply-modal {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+            width: 100%; /* 手机端占满屏幕宽度 */
+            max-width: 500px; /* 最大宽度限制，避免大屏过宽 */
+            max-height: 90vh; /* 最大高度限制，避免溢出 */
+            overflow-y: auto;
+        }
+        .reply-modal-overlay.active .reply-modal {
+            transform: translateY(0);
+        }
+
+        /* 表单原有样式保留，仅调整适配性 */
         .form-group {
             @apply space-y-1;
         }
@@ -115,36 +150,6 @@
         }
         .thanks {
             @apply text-green-600 text-sm;
-        }
-
-        .reply-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        .reply-modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .reply-modal {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transform: translateY(10px);
-            transition: transform 0.3s ease;
-        }
-        .reply-modal-overlay.active .reply-modal {
-            transform: translateY(0);
         }
     }
 @media (max-width: 640px) { 

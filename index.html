@@ -48,50 +48,85 @@
     
     <!-- Tailwind 自定义工具类 - 必须在type为tailwindcss的style标签内 -->
   <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .card-hover {
-                transition: all 0.3s ease;
-            }
-            .card-hover:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-            .scroll-indicator {
-                height: 3px;
-                background-color: theme('colors.primary');
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 50;
-                width: 0%;
-            }
-            .sidebar-container {
-                position: relative;
-            }
-            .sidebar-sticky {
-                position: sticky;
-                top: 2rem;
-                max-height: calc(100vh - 4rem);
-                overflow-y: auto;
-                padding-right: 1rem;
-            }
-            .nested-comment {
-                margin-left: 1.5rem;
-                padding-left: 1.5rem;
-                border-left: 2px solid #e5e7eb;
-            }
-            
-            .text-indent-2 {
-                text-indent: 2em;
-            }
+ @layer utilities {
+        .content-auto {
+            content-visibility: auto;
         }
-     @layer utilities {
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .scroll-indicator {
+            height: 3px;
+            background-color: theme('colors.primary');
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            width: 0%;
+        }
+        .sidebar-container {
+            position: relative;
+        }
+        .sidebar-sticky {
+            position: sticky;
+            top: 2rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+        .nested-comment {
+            margin-left: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid #e5e7eb;
+        }
+        .text-indent-2 {
+            text-indent: 2em;
+        }
+
+        /* 弹窗核心样式：恢复移动端适配，取消过小限制 */
+        .reply-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: flex-start; /* 移动端顶部对齐，避免内容被截断 */
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1rem; /* 手机端留边，避免贴边 */
+        }
+        .reply-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .reply-modal {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+            width: 100%; /* 手机端占满屏幕宽度 */
+            max-width: 500px; /* 最大宽度限制，避免大屏过宽 */
+            max-height: 90vh; /* 最大高度限制，避免溢出 */
+            overflow-y: auto;
+        }
+        .reply-modal-overlay.active .reply-modal {
+            transform: translateY(0);
+        }
+
+        /* 表单原有样式保留，仅调整适配性 */
         .form-group {
             @apply space-y-1;
         }
@@ -116,37 +151,94 @@
         .thanks {
             @apply text-green-600 text-sm;
         }
-
-        .reply-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        .reply-modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .reply-modal {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transform: translateY(10px);
-            transition: transform 0.3s ease;
-        }
-        .reply-modal-overlay.active .reply-modal {
-            transform: translateY(0);
-        }
     }
+@media (max-width: 640px) { 
+    /* 新增：设置顶级容器宽度为94%并居中 */
+    #commentsContainer {
+        width: 94% !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* 保留之前的所有样式 */
+    #commentsContainer > .border-b .comment-box .flex.gap-4 {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .nested-comment-box .flex.gap-3 {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    #commentsContainer > .border-b .comment-box .flex.gap-4 > img,
+    .nested-comment-box .flex.gap-3 > img {
+        width: 32px !important;
+        height: 32px !important;
+        margin-right: 0.75rem !important;
+        margin-bottom: 0.5rem !important;
+        display: inline-block !important;
+        vertical-align: top !important;
+    }
+    
+    #commentsContainer > .border-b .comment-box .flex.gap-4 > .flex-1,
+    .nested-comment-box .flex.gap-3 > .flex-1 {
+        display: block !important;
+        width: 94% !important;
+        padding: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* 外层容器保持94%宽度 */
+    .border-b.border-gray-100.pb-6,
+    .comment-box {
+        width: 100% !important; /* 相对于父容器#commentsContainer的100% */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: none !important;
+    }
+    
+    .nested-comment {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        border-left: none !important;
+        margin-top: 1rem !important;
+    }
+    
+    .nested-comment-box {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    p.text-sm.mb-2 {
+        width: 94% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    p.mb-3 {
+        width: 94% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.5 !important;
+        box-sizing: border-box !important;
+        max-width: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
     </style>
 </head>
 <body class="bg-light font-sans text-dark">
@@ -235,7 +327,7 @@
                         <div class="ml-auto flex items-center space-x-4">
                             <div class="flex items-center text-gray-500">
                                 <i class="fa fa-eye mr-1"></i>
-                                <span>10W+ 次查看</span>
+                                <span>11W+ 次查看</span>
                             </div>
                             <div class="flex items-center text-gray-500">
                                 <i class="fa fa-comment mr-1"></i>
@@ -1487,7 +1579,7 @@
     </div>
 
     <!-- 评论15 - 图文交替15 -->
-    <div data-comment-id="15">
+ <div class="border-b border-gray-100 pb-6" data-comment-id="14">
         <div class="comment-box">
             <div class="flex gap-4">
                 <img src="static/picture/1678947935428291.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
