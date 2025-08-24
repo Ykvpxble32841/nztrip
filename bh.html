@@ -233,6 +233,17 @@
         padding-right: 0 !important;
     }
 }
+    /* 隐藏所有包含导航标题的div区块 */
+    div:has(h4.text-lg.font-medium:contains("目的地")),
+    div:has(h4.text-lg.font-medium:contains("旅行类型")),
+    div:has(h4.text-lg.font-medium:contains("关于我们")) {
+        display: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+}
 
     </style>
 </head>
