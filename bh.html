@@ -147,28 +147,93 @@
             transform: translateY(0);
         }
     }
-        /* 其他移动端样式... */
+@media (max-width: 640px) { 
+    /* 新增：设置顶级容器宽度为94%并居中 */
+    #commentsContainer {
+        width: 94% !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
     
-    /* 修复嵌套评论缩进问题 */
+    /* 保留之前的所有样式 */
+    #commentsContainer > .border-b .comment-box .flex.gap-4 {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .nested-comment-box .flex.gap-3 {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    #commentsContainer > .border-b .comment-box .flex.gap-4 > img,
+    .nested-comment-box .flex.gap-3 > img {
+        width: 32px !important;
+        height: 32px !important;
+        margin-right: 0.75rem !important;
+        margin-bottom: 0.5rem !important;
+        display: inline-block !important;
+        vertical-align: top !important;
+    }
+    
+    #commentsContainer > .border-b .comment-box .flex.gap-4 > .flex-1,
+    .nested-comment-box .flex.gap-3 > .flex-1 {
+        display: block !important;
+        width: 94% !important;
+        padding: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* 外层容器保持94%宽度 */
+    .border-b.border-gray-100.pb-6,
+    .comment-box {
+        width: 100% !important; /* 相对于父容器#commentsContainer的100% */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: none !important;
+    }
+    
     .nested-comment {
         padding-left: 0 !important;
+        margin-left: 0 !important;
         border-left: none !important;
+        margin-top: 1rem !important;
     }
     
     .nested-comment-box {
         margin-left: 0 !important;
-        margin-right: 0 !important;
+        padding-left: 0 !important;
     }
-    
-    /* 调整评论者信息和内容间距 */
-    .flex.gap-3 {
-        gap: 0.75rem !important;
+
+    p.text-sm.mb-2 {
+        width: 94% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
     }
-    
-    .text-sm.mb-2 {
-        margin-bottom: 0.5rem !important;
+
+    p.mb-3 {
+        width: 94% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.5 !important;
+        box-sizing: border-box !important;
+        max-width: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
+
     </style>
 </head>
 <body class="bg-light font-sans text-dark">
