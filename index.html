@@ -3,10 +3,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>去新西兰有什么好玩的？- TravelAnswers</title>
+    <!-- Tailwind CSS 核心 -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 图标 -->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="static/css/message-board.css">
-         <link rel="stylesheet" type="text/css" href="static/css/wxstyle.css" />
+    
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" href="static/css/message-board.css">
+    <link rel="stylesheet" type="text/css" href="static/css/wxstyle.css" />
+    <link rel="stylesheet" href="static/css/components.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/style.css">
+   
+    
+    <!-- Tailwind 配置 - 必须在script标签内 -->
     <script>
         tailwind.config = {
             theme: {
@@ -35,7 +45,9 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
+    
+    <!-- Tailwind 自定义工具类 - 必须在type为tailwindcss的style标签内 -->
+  <style type="text/tailwindcss">
         @layer utilities {
             .content-auto {
                 content-visibility: auto;
@@ -74,143 +86,67 @@
                 padding-left: 1.5rem;
                 border-left: 2px solid #e5e7eb;
             }
-            .like-animation {
-                animation: likePulse 0.5s ease;
-            }
-            @keyframes likePulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.5); }
-                100% { transform: scale(1); }
-            }
-            .action-success {
-                animation: successPulse 0.6s ease;
-            }
-            @keyframes successPulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.3); }
-                100% { transform: scale(1); }
-            }
-            .notification {
-                animation: fadeInOut 2s ease;
-                opacity: 0;
-            }
-            @keyframes fadeInOut {
-                0% { opacity: 0; transform: translateY(-10px); }
-                20% { opacity: 1; transform: translateY(0); }
-                80% { opacity: 1; transform: translateY(0); }
-                100% { opacity: 0; transform: translateY(-10px); }
-            }
-            .pending-comment {
-                background-color: #fff8e1;
-                border: 1px solid #ffe082;
-                animation: pendingPulse 2s infinite;
-            }
-            @keyframes pendingPulse {
-                0% { background-color: #fff8e1; }
-                50% { background-color: #fff3c4; }
-                100% { background-color: #fff8e1; }
-            }
-            .reply-modal-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: rgba(0, 0, 0, 0.5);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 100;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-            .reply-modal-overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
-            .reply-modal {
-                background-color: white;
-                border-radius: 12px;
-                width: 90%;
-                max-width: 600px;
-                max-height: 80vh;
-                transform: translateY(20px);
-                transition: transform 0.3s ease;
-            }
-            .reply-modal-overlay.active .reply-modal {
-                transform: translateY(0);
-            }
-            .lv-badge {
-                font-size: 0.75rem;
-                padding: 0 4px;
-                border-radius: 4px;
-                font-weight: 600;
-                color: white;
-                margin-left: 4px;
-            }
-            .comment-date {
-                font-size: 0.875rem;
-                color: #9CA3AF;
-            }
-            .comment-actions {
-                transition: all 0.2s ease;
-            }
-            .comment-actions button:hover {
-                transform: translateY(-1px);
-            }
-            .comment-box {
-                background-color: white;
-                border-radius: 12px;
-                border: 1px solid #e5e7eb;
-                padding: 1.5rem;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                transition: all 0.2s ease;
-            }
-            .comment-box:hover {
-                box-shadow: 0 4px 8px rgba(0,0,0,0.04);
-            }
-            .nested-comment-box {
-                background-color: #fafafa;
-                border-radius: 8px;
-                border: 1px solid #f0f0f0;
-                padding: 1rem;
-                margin-top: 1rem;
-            }
-            .attraction-card {
-                margin-bottom: 2rem;
-                padding-bottom: 2rem;
-                border-bottom: 1px solid #eee;
-            }
-            .attraction-card:last-child {
-                border-bottom: none;
-            }
-            /* API状态提示样式 */
-            .api-status {
-                position: fixed;
-                top: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 10px 20px;
-                border-radius: 6px;
-                color: white;
-                z-index: 1000;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-            .api-status.show {
-                opacity: 1;
-            }
-            .api-status.loading {
-                background-color: #1976d2;
-            }
-            .api-status.success {
-                background-color: #2e7d32;
-            }
-            .api-status.error {
-                background-color: #c62828;
+            
+            .text-indent-2 {
+                text-indent: 2em;
             }
         }
+     @layer utilities {
+        .form-group {
+            @apply space-y-1;
+        }
+        .validation-error {
+            @apply text-red-500 text-xs mt-0.5;
+        }
+        .status-container {
+            @apply mt-3;
+        }
+        .status-message {
+            @apply px-3 py-2 rounded-lg flex items-center justify-center text-sm;
+        }
+        .success-container {
+            @apply mt-3;
+        }
+        .success-message {
+            @apply px-4 py-4 bg-green-50 border border-green-200 rounded-xl text-center text-sm;
+        }
+        .welcome-greeting {
+            @apply font-bold text-green-700 mb-2 text-sm;
+        }
+        .thanks {
+            @apply text-green-600 text-sm;
+        }
+
+        .reply-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .reply-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .reply-modal {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+        }
+        .reply-modal-overlay.active .reply-modal {
+            transform: translateY(0);
+        }
+    }
     </style>
 </head>
 <body class="bg-light font-sans text-dark">
@@ -697,8 +633,8 @@
                                                             </div>
                                                         </div>
                                                         <p class="text-sm mb-2">
-                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
-  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
+                                                            <p><span class="wuk_name">小吕的微信号</span> <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_whatsapp">+ 61 493 385 079</span></a>
 </p><img src="static/picture/wewhat.jpg">
                                             <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
                                                 <p>
@@ -1009,8 +945,8 @@
                                                             </div>
                                                         </div>
                                                         <p class="text-sm mb-2">
-                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
-  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
+                                                            <p><span class="wuk_name">小吕的微信号</span> <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_whatsapp">+ 61 493 385 079</span></a>
 </p><img src="static/picture/wewhat.jpg">
                                             <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
                                                 <p>
@@ -1268,7 +1204,7 @@
                     </div>
                     <p class="mb-3">非常感谢小吕给我们全家人提供的优质服务，陪伴家人、孩子出来旅游一趟，机会非常难得，新西兰真值得一去！</p>
 
-<p class="mb-3">我们采纳了小刘的建议：小车团自由行，一家人单独一台车，私密性强，非常安全。</p>
+<p class="mb-3">我们采纳了小吕的建议：小车团自由行，一家人单独一台车，私密性强，非常安全。</p>
                     <div class="mb-3">
                         <img src="static/picture/31.jpg" alt="塔斯曼国家公园" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
                     </div>
@@ -1391,8 +1327,8 @@
                                                         </div>
                                                         <p class="text-sm mb-2">
                                                          <p class="text-sm mb-2">
-                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
-  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
+                                                            <p><span class="wuk_name">小吕的微信号</span> <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_whatsapp">+ 61 493 385 079</span></a>
 </p>
                                             <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
                                                 <p>
@@ -1422,7 +1358,7 @@
     <!-- 评论12 - 图文交替12 -->
     <div class="border-b border-gray-100 pb-6" data-comment-id="12">
         <div class="comment-box">
-            <div class="flex gap-4">
+<span class="wuk_name">小吕的微信号</span>            <div class="flex gap-4">
                 <img src="static/picture/1014-200x200.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
                 <div class="flex-1">
                     <div class="flex justify-between items-start mb-2">
@@ -1525,8 +1461,8 @@
                     <p class="mb-3"> 我是带着爸妈和爷爷去的，跟<span class="wuk_name">小吕</span>报的自由行团。因考虑到老人的身体，不敢把行程填太满和太赶，所以这次报的这个团行程比较慢，全程都比较轻松。</p>
                                     <p>线路设计非常合理，爷爷一点感觉不到累，很符合中老年人出行，吃住方面都非常好。</p>
                                     <p>找个澳大利亚当地的负责人为你设计路线，真的是很接地气。</p>
-                                    <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
-  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a></p></p>
+                                    <p><span class="wuk_name">小吕的微信号</span> <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_whatsapp">+ 61 493 385 079</span></a></p></p>
                     <div class="flex items-center space-x-4 text-sm comment-actions">
                         <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
                             <i class="fa fa-thumbs-up mr-1"></i>
@@ -1607,6 +1543,7 @@
             </div>
             
             <!-- 右侧边栏 -->
+
             <div class="lg:w-1/3 sidebar-container">
                 <div class="sidebar-sticky">
                     <!-- 相关问题 -->
@@ -1614,31 +1551,31 @@
                         <h3 class="text-lg font-bold mb-4">相关问题</h3>
                         <ul class="space-y-3">
                             <li>
-                                <a href="#" class="flex items-start group">
+                                <a href="#" class="popup-link flex items-start" data-popup="info-popup">
                                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">1</span>
                                     <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">新西兰交通工具怎么选？自驾方便吗？有什么好的路线推荐？</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-start group">
+                               <a href="#" class="popup-link flex items-start" data-popup="info-popup">
                                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">2</span>
                                     <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">我想进行新西兰9天游，有什么方式推荐？需要提前预约吗？</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-start group">
+                               <a href="#" class="popup-link flex items-start" data-popup="info-popup">
                                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">3</span>
                                     <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">新西兰的有什么美食，有什么特殊的推荐？价格和味道怎么样？</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-start group">
+                               <a href="#" class="popup-link flex items-start" data-popup="info-popup">
                                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">4</span>
                                     <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">去新西兰适合带老人和小孩游玩吗？有没有无障碍设施？</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-start group">
+                               <a href="#" class="popup-link flex items-start" data-popup="info-popup">
                                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">5</span>
                                     <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">我如果做游轮到达澳大利亚，想游完澳洲在去新西兰玩，行程应该怎么规划？大概行程需要多长时间？</span>
                                 </a>
@@ -1646,27 +1583,28 @@
                         </ul>
                     </div>
                     
-                    <!-- 长沙旅游攻略 -->
+
+           <!-- 长沙旅游攻略 -->
                     <div class="bg-white rounded-2xl shadow-sm p-6 mb-6">
-                        <h3 class="text-lg font-bold mb-4">长沙旅游攻略</h3>
+                        <h3 class="text-lg font-bold mb-4">新西兰旅游攻略</h3>
                         <div class="space-y-4">
-                            <a href="#" class="block group">
+                            <a href="#" class="block group popup-link" data-popup="info-popup">
                                 <div class="relative rounded-xl overflow-hidden">
-                                    <img src="https://picsum.photos/id/1086/600/400" alt="长沙三日游攻略" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <img src="static/picture/42034-08-23_120026_348.png" alt="新西兰八日游攻略" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                                     <div class="absolute bottom-0 left-0 p-4 text-white">
-                                        <h4 class="font-medium">长沙三日游最佳路线</h4>
-                                        <p class="text-sm text-white/80">包含橘子洲、岳麓山等必去景点</p>
+                                        <h4 class="font-medium">新西兰八日游最佳路线</h4>
+                                        <p class="text-sm text-white/80">包含库克山国家公园、皇后镇等必去景点</p>
                                     </div>
                                 </div>
                             </a>
-                            <a href="#" class="block group">
+                              <a href="#" class="block group popup-link" data-popup="info-popup">
                                 <div class="relative rounded-xl overflow-hidden">
-                                    <img src="https://picsum.photos/id/1087/600/400" alt="长沙美食指南" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <img src="static/picture/8923189JD798978890.png" alt="新西兰美食指南" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                                     <div class="absolute bottom-0 left-0 p-4 text-white">
-                                        <h4 class="font-medium">长沙美食指南</h4>
-                                        <p class="text-sm text-white/80">从臭豆腐到剁椒鱼头</p>
+                                        <h4 class="font-medium">新西兰美食指南</h4>
+                                        <p class="text-sm text-white/80">从布拉夫生蚝到新西兰龙虾</p>
                                     </div>
                                 </div>
                             </a>
@@ -1677,12 +1615,13 @@
                     <div class="bg-white rounded-2xl shadow-sm p-6">
                         <h3 class="text-lg font-bold mb-4">旅游专家</h3>
                         <div class="space-y-4">
+                            <a href="#" class="block group popup-link" data-popup="info-popup">
                             <div class="flex items-center gap-3">
-                                <img src="https://picsum.photos/id/1005/200" alt="长沙旅游达人" class="w-12 h-12 rounded-full object-cover">
+                                <img src="static/picture/1678946535439190.jpg" alt="刘美玲[环球达人]" class="w-12 h-12 rounded-full object-cover">
                                 <div class="flex-1">
                                     <h4 class="font-medium flex items-center">
-                                        长沙旅游达人
-                                        <span class="lv-badge bg-lv8">LV8</span>
+                                        刘美玲[环球达人]
+                                        <span class="lv-badge bg-lv8">LV8</span></a>
                                     </h4>
                                     <p class="text-sm text-gray-500">回答了128个问题</p>
                                 </div>
@@ -1690,12 +1629,13 @@
                                     关注
                                 </button>
                             </div>
+                            <a href="#" class="block group popup-link" data-popup="info-popup">
                             <div class="flex items-center gap-3">
-                                <img src="https://picsum.photos/id/1025/200" alt="湖南旅行家" class="w-12 h-12 rounded-full object-cover">
+                                <img src="static/picture/08868-24_173247_953.jpg" alt="专业导游" class="w-12 h-12 rounded-full object-cover">
                                 <div class="flex-1">
                                     <h4 class="font-medium flex items-center">
-                                        湖南旅行家
-                                        <span class="lv-badge bg-lv7">LV7</span>
+                                        吕 吕（Louise）[专业导游]
+                                    <span class="lv-badge bg-lv7">LV13</span></a>
                                     </h4>
                                     <p class="text-sm text-gray-500">回答了96个问题</p>
                                 </div>
@@ -1703,12 +1643,13 @@
                                     关注
                                 </button>
                             </div>
+                            <a href="#" class="block group popup-link" data-popup="info-popup">
                             <div class="flex items-center gap-3">
-                                <img src="https://picsum.photos/id/1074/200" alt="湘江导游" class="w-12 h-12 rounded-full object-cover">
+                                <img src="static/picture/1074-200x200.jpg" alt="滑雪达人" class="w-12 h-12 rounded-full object-cover">
                                 <div class="flex-1">
                                     <h4 class="font-medium flex items-center">
-                                        湘江导游
-                                        <span class="lv-badge bg-lv6">LV6</span>
+                                        刘曦伟[滑雪高手]
+                                        <span class="lv-badge bg-lv6">LV6</span></a>
                                     </h4>
                                     <p class="text-sm text-gray-500">回答了73个问题</p>
                                 </div>
@@ -1848,801 +1789,159 @@
             </div>
         </div>
     </footer>
-
+<!-- 侧边栏弹窗（修复编辑框显示异常） -->
+<div id="infoPopup" class="reply-modal-overlay">
+    <div class="reply-modal max-h-[90vh] overflow-y-auto w-[60%] sm:w-[384px] mx-auto">
+        <!-- 弹窗头部：关闭按钮+标题文本 -->
+        <div class="p-4 border-b border-gray-100 sticky top-0 bg-white z-10 flex justify-between items-start">
+            <p class="text-sm text-gray-700">
+                由于网站需要登录账号，作者限制游客浏览，您也可以通过提交您的联系方式，文章作者收到您的消息会在第一时间联系您！
+            </p>
+            <button id="closePopupBtn" class="text-gray-500 hover:text-gray-700 transition-colors ml-2">
+                <i class="fa fa-times text-sm"></i>
+            </button>
+        </div>
+        
+        <!-- 表单内容区 -->
+        <div class="p-4">
+            <div id="formContainer">
+                <form id="messageForm" class="space-y-4">
+                    <!-- 1. 账号 -->
+                    <div class="form-group flex items-center gap-2">
+                        <label for="account" class="block text-xs font-medium text-gray-700 w-24">
+                            您的账号 <span class="required text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="account" 
+                            name="account" 
+                            placeholder="请输入账号" 
+                            required
+                            class="flex-1 px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm"
+                        >
+                        <div id="accountError" class="validation-error text-red-500 text-xs hidden"></div>
+                    </div>
+                    
+                    <!-- 2. 邮箱 -->
+                    <div class="form-group flex items-center gap-2">
+                        <label for="email" class="block text-xs font-medium text-gray-700 w-24">
+                            您的邮箱 <span class="required text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="请输入邮箱" 
+                            required
+                            class="flex-1 px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm"
+                        >
+                        <div id="emailError" class="validation-error text-red-500 text-xs hidden"></div>
+                    </div>
+                    
+                    <!-- 3. 通讯工具 -->
+                    <div class="form-group flex items-center gap-2">
+                        <label for="contact_tool" class="block text-xs font-medium text-gray-700 w-24">
+                            通讯工具 <span class="required text-red-500">*</span>
+                        </label>
+                        <select 
+                            id="contact_tool" 
+                            name="contact_tool" 
+                            required
+                            class="flex-1 px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm appearance-none bg-white bg-[url('data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><path d=\"M3.293 4.293a1 1 0 011.414 0L6 6.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z\" fill=\"#6b7280\"/></svg>')] bg-[length:0.75rem_0.75rem] bg-[right_0.5rem_center] bg-no-repeat pr-6"
+                        >
+                            <option value="">请选择</option>
+                            <option value="Whatsapp">Whatsapp</option>
+                            <option value="WeChat">WeChat</option>
+                            <option value="Telegram">Telegram</option>
+                            <option value="Teams">Teams</option>
+                            <option value="Signal">Signal</option>
+                        </select>
+                        <div id="contactToolError" class="validation-error text-red-500 text-xs hidden"></div>
+                    </div>
+                    
+                    <!-- 4. 通讯工具账号 -->
+                    <div class="form-group flex items-center gap-2">
+                        <label for="contact_account" class="block text-xs font-medium text-gray-700 w-24">
+                            通讯账号 <span class="required text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="contact_account" 
+                            name="contact_account" 
+                            placeholder="请输入账号" 
+                            required
+                            class="flex-1 px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm"
+                        >
+                        <div id="contactAccountError" class="validation-error text-red-500 text-xs hidden"></div>
+                    </div>
+                    
+                    <!-- 5. 修复后的留言编辑框（关键：正确闭合textarea标签） -->
+                    <div class="form-group">
+                        <label for="content" class="block text-xs font-medium text-gray-700 mb-1">
+                            留言内容 <span class="required text-red-500">*</span>
+                        </label>
+                        <!-- 以下是修复后的文本框：属性写在标签内，标签正确闭合 -->
+                        <textarea 
+                            id="content" 
+                            name="content" 
+                            rows="3" 
+                            placeholder="请输入留言内容" 
+                            required
+                            class="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm resize-none"
+                        ></textarea> <!-- 关键：这里必须直接闭合标签，不能换行或插入其他内容 -->
+                        <div id="contentError" class="validation-error text-red-500 text-xs hidden"></div>
+                    </div>
+                    
+                    <!-- 隐藏字段 -->
+                    <input type="hidden" name="source" value="新西兰攻略页侧边栏">
+                    <input type="hidden" name="timestamp" value="${new Date().getTime()}">
+                    
+                    <!-- 提交按钮 -->
+                    <button 
+                        type="submit" 
+                        class="submit-btn w-full py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center text-sm mt-1"
+                        id="submitBtn"
+                    >
+                        <i class="fa fa-paper-plane mr-1.5"></i> 提交留言
+                    </button>
+                </form>
+                
+                <!-- 提交状态提示 -->
+                <div class="status-container mt-3 hidden" id="statusContainer">
+                    <div id="statusMessage" class="status-message px-3 py-2 rounded-lg flex items-center justify-center text-sm">
+                        <i class="fa fa-spinner fa-spin mr-1.5"></i> 提交中...
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 提交成功信息 -->
+            <div id="successContainer" class="success-container mt-3 hidden">
+                <div class="success-message px-4 py-4 bg-green-50 border border-green-200 rounded-xl text-center text-sm">
+                    <div class="welcome-greeting font-bold text-green-700 mb-2" id="welcomeName"></div>
+                    <div class="welcome-content text-gray-700">
+                        <p class="mb-1">您的留言已成功提交 🎉</p>
+                        <p class="mb-2">我们会尽快通过您提供的 <span id="welcomeContact" class="font-medium text-green-800"></span> 联系您</p>
+                        <p class="thanks text-green-600">感谢您的支持 ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- 返回顶部按钮 -->
     <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
         <i class="fa fa-arrow-up"></i>
     </button>
 
+
+
     <!-- 通知容器 -->
     <div id="notificationContainer" class="fixed top-20 right-6 z-50"></div>
 
     <!-- JavaScript -->
-    <script>
-        // 存储当前回复的目标ID
-        let currentReplyTo = null;
-        let currentShareTarget = null;
-        
-        // API地址
-        const API_URL = 'https://autr.1c.q56.dpdns.org/3/api.php';
-        
-        // 显示API状态提示
-        function showApiStatus(message, type = 'loading') {
-            const statusEl = document.getElementById('apiStatus');
-            statusEl.textContent = message;
-            statusEl.className = 'api-status';
-            statusEl.classList.add(type);
-            statusEl.classList.add('show');
-            
-            // 3秒后隐藏
-            if (type !== 'loading') {
-                setTimeout(() => {
-                    statusEl.classList.remove('show');
-                }, 3000);
-            }
-            
-            return statusEl;
-        }
-        
-        // 隐藏API状态提示
-        function hideApiStatus() {
-            const statusEl = document.getElementById('apiStatus');
-            statusEl.classList.remove('show');
-        }
-        
-        // 滚动进度指示器
-        window.addEventListener('scroll', function() {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollIndicator").style.width = scrolled + "%";
-            
-            // 导航栏滚动效果
-            const header = document.getElementById("mainHeader");
-            if (winScroll > 50) {
-                header.classList.add("py-2");
-                header.classList.remove("py-3");
-            } else {
-                header.classList.add("py-3");
-                header.classList.remove("py-2");
-            }
-            
-            // 返回顶部按钮显示/隐藏
-            const backToTopBtn = document.getElementById("backToTop");
-            if (winScroll > 300) {
-                backToTopBtn.classList.remove("opacity-0", "invisible");
-                backToTopBtn.classList.add("opacity-100", "visible");
-            } else {
-                backToTopBtn.classList.add("opacity-0", "invisible");
-                backToTopBtn.classList.remove("opacity-100", "visible");
-            }
-        });
-        
-        // 返回顶部功能
-        document.getElementById("backToTop").addEventListener("click", function() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-        
-        // 图片加载动画
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = document.querySelectorAll("img:not([onload])");
-            images.forEach(img => {
-                img.classList.add("opacity-0", "transition-opacity", "duration-500");
-                img.onload = function() {
-                    img.classList.remove("opacity-0");
-                    img.classList.add("opacity-100");
-                }
-                // 如果图片已经缓存
-                if (img.complete) {
-                    img.classList.remove("opacity-0");
-                    img.classList.add("opacity-100");
-                }
-            });
-            
-            // 页面加载时获取评论
-            //fetchComments();
-        });
-        
-        // 点赞功能
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.like-btn')) {
-                const likeBtn = e.target.closest('.like-btn');
-                const icon = likeBtn.querySelector('i');
-                const countSpan = likeBtn.querySelector('span');
-                
-                // 移除逗号并转换为数字
-                let count = parseInt(countSpan.textContent.replace(/,/g, ''));
-                
-                // 检查是否已经点赞
-                if (icon.classList.contains('text-primary')) {
-                    // 取消点赞
-                    icon.classList.remove('text-primary');
-                    countSpan.textContent = formatNumber(count - 1);
-                } else {
-                    // 点赞
-                    icon.classList.add('text-primary', 'like-animation');
-                    countSpan.textContent = formatNumber(count + 1);
-                    
-                    // 移除动画类，以便下次点击可以重新触发
-                    setTimeout(() => {
-                        icon.classList.remove('like-animation');
-                    }, 500);
-                }
-            }
-        });
-        
-        // 收藏功能
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.bookmark-btn')) {
-                const bookmarkBtn = e.target.closest('.bookmark-btn');
-                const icon = bookmarkBtn.querySelector('i');
-                const text = bookmarkBtn.querySelector('span');
-                
-                // 检查是否已经收藏
-                if (icon.classList.contains('fa-bookmark')) {
-                    // 取消收藏
-                    icon.classList.remove('fa-bookmark', 'text-primary', 'action-success');
-                    icon.classList.add('fa-bookmark-o');
-                    text.textContent = '收藏';
-                    showNotification('已取消收藏');
-                } else {
-                    // 收藏
-                    icon.classList.remove('fa-bookmark-o');
-                    icon.classList.add('fa-bookmark', 'text-primary', 'action-success');
-                    text.textContent = '已收藏';
-                    showNotification('收藏成功');
-                    
-                    // 移除动画类，以便下次点击可以重新触发
-                    setTimeout(() => {
-                        icon.classList.remove('action-success');
-                    }, 600);
-                }
-            }
-        });
-        
-        // 分享按钮点击事件
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.share-btn')) {
-                const shareBtn = e.target.closest('.share-btn');
-                currentShareTarget = shareBtn.closest('[data-comment-id]') ? 
-                                    shareBtn.closest('[data-comment-id]').getAttribute('data-comment-id') : 
-                                    'answer';
-                
-                // 显示分享弹窗
-                document.getElementById('shareModal').classList.add('active');
-                
-                // 阻止事件冒泡
-                e.stopPropagation();
-            }
-        });
-        
-        // 分享选项点击事件
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.share-option')) {
-                const shareOption = e.target.closest('.share-option');
-                const platform = shareOption.getAttribute('data-platform');
-                const icon = shareOption.querySelector('i');
-                
-                // 添加成功动画
-                icon.classList.add('action-success', 'text-green-500');
-                
-                // 根据不同平台显示不同消息
-                let message = '';
-                switch(platform) {
-                    case 'wechat':
-                        message = '已分享到微信';
-                        break;
-                    case 'whatsapp':
-                        message = '已分享到Whatsapp';
-                        break;
-                    case 'facebook':
-                        message = '已分享到Facebook';
-                        break;
-                    case 'x':
-                        message = '已分享到X推特';
-                        break;
-                }
-                
-                // 显示通知
-                showNotification(message);
-                
-                // 1秒后关闭弹窗
-                setTimeout(() => {
-                    document.getElementById('shareModal').classList.remove('active');
-                    icon.classList.remove('action-success', 'text-green-500');
-                }, 1000);
-                
-                // 阻止事件冒泡
-                e.stopPropagation();
-            }
-        });
-        
-        // 关闭分享弹窗
-        document.getElementById('cancelShareBtn').addEventListener('click', function() {
-            document.getElementById('shareModal').classList.remove('active');
-        });
-        
-        // 点击分享弹窗外部关闭弹窗
-        document.getElementById('shareModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-            }
-        });
-        
-        // 格式化数字，添加千位分隔符
-        function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        
-        // 修复回复功能 - 确保所有回复按钮都能正确打开弹窗
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.reply-btn')) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const replyBtn = e.target.closest('.reply-btn');
-                currentReplyTo = replyBtn.getAttribute('data-reply-to');
-                
-                if (!currentReplyTo) {
-                    showNotification('回复目标错误，请重试', 'error');
-                    return;
-                }
-                
-                // 获取被回复的内容
-                let replyContent = '';
-                let replyAuthor = '';
-                let replyAuthorLv = '';
-                
-                if (currentReplyTo === 'answer') {
-                    // 回复最佳回答
-                    const authorEl = document.querySelector('.prose').closest('div').querySelector('.font-medium');
-                    if (authorEl) {
-                        replyAuthor = authorEl.firstChild.textContent.trim();
-                        replyAuthorLv = authorEl.querySelector('.lv-badge')?.textContent || '';
-                    }
-                    
-                    const answerContent = document.querySelector('.prose p:first-of-type')?.textContent || '';
-                    replyContent = answerContent.length > 100 ? answerContent.substring(0, 100) + '...' : answerContent;
-                } else {
-                    // 回复评论
-                    const commentEl = document.querySelector(`[data-comment-id="${currentReplyTo}"]`);
-                    if (commentEl) {
-                        const authorEl = commentEl.querySelector('h4, h5');
-                        if (authorEl) {
-                            replyAuthor = authorEl.firstChild.textContent.trim();
-                            replyAuthorLv = authorEl.querySelector('.lv-badge')?.textContent || '';
-                        }
-                        
-                        const commentText = commentEl.querySelector('p')?.textContent || '';
-                        replyContent = commentText.length > 100 ? commentText.substring(0, 100) + '...' : commentText;
-                    } else {
-                        showNotification('未找到回复目标，请重试', 'error');
-                        return;
-                    }
-                }
-                
-                // 显示被回复的内容
-                document.getElementById('replyToContent').innerHTML = `
-                    <div class="text-gray-500 mb-1">回复 <span class="font-medium text-gray-800 flex items-center inline-flex">${replyAuthor} ${replyAuthorLv ? `<span class="lv-badge bg-lv${replyAuthorLv.replace('LV', '')}">${replyAuthorLv}</span>` : ''}</span>：</div>
-                    <div class="text-gray-800">${replyContent}</div>
-                `;
-                
-                // 清空回复框并聚焦
-                const replyTextarea = document.getElementById('replyTextarea');
-                replyTextarea.value = '';
-                replyTextarea.focus();
-                
-                // 显示弹窗
-                document.getElementById('replyModal').classList.add('active');
-            }
-        });
-        
-        // 点击弹窗外部关闭弹窗
-        document.getElementById('replyModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-            }
-        });
-        
-        // 取消回复按钮
-        document.getElementById('cancelReplyBtn').addEventListener('click', function() {
-            document.getElementById('replyModal').classList.remove('active');
-            currentReplyTo = null;
-        });
-        
-        // 发送回复按钮
-        document.getElementById('sendReplyBtn').addEventListener('click', function() {
-            sendReply();
-        });
-        
-        // 按Enter发送回复，Shift+Enter换行
-        document.getElementById('replyTextarea').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendReply();
-            }
-        });
-        
-        // 发送回复功能 - 修复版
-        function sendReply() {
-            const replyTextarea = document.getElementById('replyTextarea');
-            const replyText = replyTextarea.value.trim();
-            
-            if (replyText && currentReplyTo) {
-                // 显示API加载状态
-                const statusEl = showApiStatus('正在提交回复...');
-                
-                // 准备表单数据
-                const form = document.getElementById('apiForm');
-                form.querySelector('[name="action"]').value = 'add_message';
-                form.querySelector('[name="content"]').value = replyText;
-                form.querySelector('[name="parent_id"]').value = currentReplyTo;
-                
-                // 构建表单数据
-                const formData = new FormData(form);
-                const data = new URLSearchParams(formData.entries());
-                
-                // 发送API请求
-                fetch(API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: data
-                })
-                .then(response => {
-                    if (!response.ok) throw new Error('网络错误: ' + response.status);
-                    return response.json();
-                })
-                .then(result => {
-                    hideApiStatus();
-                    
-                    if (result.success) {
-                        // 隐藏弹窗
-                        document.getElementById('replyModal').classList.remove('active');
-                        
-                        // 显示成功通知
-                        showNotification('回复发布成功');
-                        
-                        // 创建新回复元素
-                        const newReply = document.createElement('div');
-                        newReply.className = 'nested-comment-box';
-                        newReply.setAttribute('data-comment-id', `reply-${Date.now()}`);
-                        newReply.innerHTML = `
-                            <div class="flex gap-3">
-                                <img src="https://picsum.photos/id/64/200" alt="你的头像" class="w-8 h-8 rounded-full">
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start mb-1">
-                                        <div>
-                                            <h5 class="font-medium text-sm flex items-center">
-                                                我
-                                                <span class="lv-badge bg-lv5">LV5</span>
-                                            </h5>
-                                            <p class="text-xs text-gray-500">刚刚</p>
-                                        </div>
-                                    </div>
-                                    <p class="text-sm mb-2">${replyText}</p>
-                                    <div class="flex items-center space-x-4 text-xs comment-actions">
-                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
-                                            <i class="fa fa-thumbs-up mr-1"></i>
-                                            <span>0</span>
-                                        </button>
-                                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="${newReply.getAttribute('data-comment-id')}">
-                                            <i class="fa fa-reply mr-1"></i>
-                                            <span>回复</span>
-                                        </button>
-                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
-                                            <i class="fa fa-bookmark-o mr-1"></i>
-                                            <span>收藏</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        
-                        // 找到回复位置并插入
-                        if (currentReplyTo === 'answer') {
-                            // 回复最佳回答，添加到回答下方的评论区
-                            const firstComment = document.getElementById('commentsContainer').firstChild;
-                            if (firstComment) {
-                                document.getElementById('commentsContainer').insertBefore(newReply, firstComment);
-                            } else {
-                                document.getElementById('commentsContainer').appendChild(newReply);
-                            }
-                        } else {
-                            // 回复评论，添加到对应评论的嵌套评论区
-                            const commentEl = document.querySelector(`[data-comment-id="${currentReplyTo}"]`);
-                            if (commentEl) {
-                                let nestedComments = commentEl.querySelector('.nested-comment');
-                                if (!nestedComments) {
-                                    nestedComments = document.createElement('div');
-                                    nestedComments.className = 'nested-comment mt-4 space-y-4';
-                                    commentEl.appendChild(nestedComments);
-                                }
-                                nestedComments.appendChild(newReply);
-                            } else {
-                                showNotification('回复失败，未找到目标评论', 'error');
-                            }
-                        }
-                    } else {
-                        showNotification('回复失败: ' + (result.error || '未知错误'), 'error');
-                    }
-                    
-                    // 重置当前回复目标
-                    currentReplyTo = null;
-                })
-                .catch(error => {
-                    hideApiStatus();
-                    showNotification('回复失败: ' + error.message, 'error');
-                    console.error('API错误:', error);
-                });
-            } else {
-                showNotification('回复内容不能为空', 'error');
-            }
-        }
-        
-        // 显示通知
-        function showNotification(message, type = 'success') {
-            const container = document.getElementById('notificationContainer');
-            const notification = document.createElement('div');
-            
-            // 设置通知样式
-            notification.className = `notification px-4 py-3 rounded-lg shadow-lg mb-2 flex items-center ${
-                type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'
-            }`;
-            
-            // 设置通知图标
-            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
-            notification.innerHTML = `
-                <i class="fa ${icon} mr-2"></i>
-                <span>${message}</span>
-            `;
-            
-            // 添加到容器并自动移除
-            container.appendChild(notification);
-            setTimeout(() => {
-                notification.remove();
-            }, 2000);
-        }
-        
-        // 加载更多评论功能
-        let commentPage = 1;
-        const totalPages = 3; // 总共有3页评论
-        
-        document.getElementById('loadMoreComments').addEventListener('click', function() {
-            const loadMoreBtn = this;
-            const commentsContainer = document.getElementById('commentsContainer');
-            
-            // 显示加载状态
-            loadMoreBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 加载中...';
-            loadMoreBtn.disabled = true;
-            
-            // 模拟加载延迟
-            setTimeout(() => {
-                commentPage++;
-                
-                // 生成新评论
-                for (let i = 1; i <= 5; i++) {
-                    const commentNumber = (commentPage - 1) * 5 + i + 20; // 从21开始
-                    const randomId = 1090 + i + (commentPage - 1) * 5;
-                    const randomLikes = Math.floor(Math.random() * 50) + 1;
-                    const randomLv = Math.floor(Math.random() * 9) * 0; // 1-10级
-                    const randomMonths = Math.floor(Math.random() * 5) + 1; // 生成1-5的随机数
 
-                    const comment = document.createElement('div');
-                    comment.className = 'border-b border-gray-100 pb-6';
-                    comment.setAttribute('data-comment-id', `load-${commentNumber}`);
-                    comment.innerHTML = `
-                        <div class="comment-box">
-                            <div class="flex gap-4">
-                                <img src="https://picsum.photos/id/${randomId}/200" alt="评论者头像" class="w-10 h-10 rounded-full opacity-0 transition-opacity duration-500" onload="this.classList.add('opacity-100')">
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <div>
-                                            <h4 class="font-medium flex items-center">
-                                                游客${commentNumber}
-                                                <span class="lv-badge bg-lv${randomLv}">LV${randomLv}</span>
-                                            </h4>
-                                            <p class="comment-date">${commentPage/2}个月前</p>
-                                        </div>
-                                        <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">旅行体验</span>
-                                    </div>
-                                    <p class="mb-3">新西兰风景优美，我准备${randomMonths}个月后去新西兰。感谢分享的攻略，对我的旅行帮助很大！方便给个小吕的联系方式吗？</p>
-                                    <div class="flex items-center space-x-4 text-sm comment-actions">
-                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
-                                            <i class="fa fa-thumbs-up mr-1"></i>
-                                            <span>${formatNumber(randomLikes)}</span>
-                                        </button>
-                                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="load-${commentNumber}">
-                                            <i class="fa fa-reply mr-1"></i>
-                                            <span>回复</span>
-                                        </button>
-                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
-                                            <i class="fa fa-bookmark-o mr-1"></i>
-                                            <span>收藏</span>
-                                        </button>
-                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
-                                            <i class="fa fa-share-alt mr-1"></i>
-                                            <span>分享</span>
-                                        </button>
-                                    </div>
- <div class="nested-comment mt-4 space-y-4">
-                                            <div class="nested-comment-box" data-comment-id="1-1">
-                                                <div class="flex gap-3">
-                                                    <img src="static/picture/1678946535439190.jpg" alt="回复者头像" class="w-8 h-8 rounded-full transition-opacity duration-500 opacity-100">
-                                                    <div class="flex-1">
-                                                        <div class="flex justify-between items-start mb-1">
-                                                            <div>
-                                                                <h5 class="font-medium text-sm flex items-center">
-                                                                    长沙旅游达人
-                                                                    <span class="lv-badge bg-lv8">LV8</span>
-                                                                </h5>
-                                                                <p class="text-xs text-gray-500">两天前</p>
-                                                            </div>
-                                                        </div>
-                                                        <p class="text-sm mb-2">
-                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
-  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
-</p><img src="static/picture/wewhat.jpg">
-                                            <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
-                                                <p>
-                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
-                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
-                                                                <i class="fa fa-thumbs-up mr-1"></i>
-                                                                <span>${formatNumber(randomLikes)}</span>
-                                                            </button>
-                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
-                                                                <i class="fa fa-reply mr-1"></i>
-                                                                <span>回复</span>
-                                                            </button>
-                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
-                                                                <i class="fa fa-bookmark-o mr-1"></i>
-                                                                <span>收藏</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                    `;
-                    
-                    // 添加到评论容器
-                    commentsContainer.appendChild(comment);
-                }
-                
-                // 恢复按钮状态
-                loadMoreBtn.disabled = false;
-                
-                // 如果是最后一页，隐藏加载更多按钮
-                if (commentPage >= totalPages) {
-                    loadMoreBtn.innerHTML = '没有更多评论了';
-                    loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                    loadMoreBtn.disabled = true;
-                } else {
-                    loadMoreBtn.innerHTML = '<i class="fa fa-refresh mr-2"></i> 加载更多评论';
-                }
-                
-            }, 1000);
-        });
-        
-        // 发表评论功能
-        document.getElementById('postCommentBtn').addEventListener('click', function() {
-            const textarea = document.getElementById('commentTextarea');
-            const commentText = textarea.value.trim();
-            const commentsContainer = document.getElementById('commentsContainer');
-            
-            if (commentText) {
-                // 显示API加载状态
-                const statusEl = showApiStatus('正在提交评论...');
-                
-                // 准备表单数据
-                const form = document.getElementById('apiForm');
-                form.querySelector('[name="action"]').value = 'add_message';
-                form.querySelector('[name="content"]').value = commentText;
-                form.querySelector('[name="parent_id"]').value = '';
-                
-                // 构建表单数据
-                const formData = new FormData(form);
-                const data = new URLSearchParams(formData.entries());
-                
-                // 发送API请求
-                fetch(API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: data
-                })
-                .then(response => {
-                    if (!response.ok) throw new Error('网络错误: ' + response.status);
-                    return response.json();
-                })
-                .then(result => {
-                    hideApiStatus();
-                    
-                    if (result.success) {
-                        // 清空评论框
-                        textarea.value = '';
-                        
-                        // 显示成功通知
-                        showNotification('评论发布成功');
-                        
-                        // 创建新评论元素
-                        const newComment = document.createElement('div');
-                        newComment.className = 'border-b border-gray-100 pb-6';
-                        newComment.setAttribute('data-comment-id', `new-${Date.now()}`);
-                        newComment.innerHTML = `
-                            <div class="comment-box">
-                                <div class="flex gap-4">
-                                    <img src="https://picsum.photos/id/64/200" alt="你的头像" class="w-10 h-10 rounded-full">
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <div>
-                                                <h4 class="font-medium flex items-center">
-                                                    我
-                                                    <span class="lv-badge bg-lv5">LV5</span>
-                                                </h4>
-                                                <p class="comment-date">刚刚</p>
-                                            </div>
-                                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">旅行体验</span>
-                                        </div>
-                                        <p class="mb-3">${commentText}</p>
-                                        <div class="flex items-center space-x-4 text-sm comment-actions">
-                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
-                                                <i class="fa fa-thumbs-up mr-1"></i>
-                                                <span>0</span>
-                                            </button>
-                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="${newComment.getAttribute('data-comment-id')}">
-                                                <i class="fa fa-reply mr-1"></i>
-                                                <span>回复</span>
-                                            </button>
-                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
-                                                <i class="fa fa-bookmark-o mr-1"></i>
-                                                <span>收藏</span>
-                                            </button>
-                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
-                                                <i class="fa fa-share-alt mr-1"></i>
-                                                <span>分享</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        
-                        // 将新评论添加到评论列表顶部
-                        const firstComment = commentsContainer.firstChild;
-                        if (firstComment) {
-                            commentsContainer.insertBefore(newComment, firstComment);
-                        } else {
-                            commentsContainer.appendChild(newComment);
-                        }
-                    } else {
-                        showNotification('评论失败: ' + (result.error || '未知错误'), 'error');
-                    }
-                })
-                .catch(error => {
-                    hideApiStatus();
-                    showNotification('评论失败: ' + error.message, 'error');
-                    console.error('API错误:', error);
-                });
-            } else {
-                showNotification('评论内容不能为空', 'error');
-            }
-        });
-        
-        // 从API获取评论
-        function fetchComments() {
-            // 显示API加载状态
-            const statusEl = showApiStatus('正在加载评论...');
-            
-            // 准备请求数据
-            const data = new URLSearchParams({
-                'action': 'get_messages'
-            });
-            
-            // 发送API请求
-            fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: data
-            })
-            .then(response => {
-                if (!response.ok) throw new Error('获取评论失败: ' + response.status);
-                return response.json();
-            })
-            .then(result => {
-                hideApiStatus();
-                
-                if (result.success && result.messages && result.messages.length > 0) {
-                    const commentsContainer = document.getElementById('commentsContainer');
-                    
-                    // 清空现有评论（保留结构）
-                    commentsContainer.innerHTML = '';
-                    
-                    // 添加从API获取的评论
-                    result.messages.forEach((msg, index) => {
-                        // 为了演示，我们使用现有评论模板并填充API数据
-                        const randomId = 1000 + (index % 20);
-                        const randomLv = (index % 10) + 1;
-                        const randomLikes = Math.floor(Math.random() * 100) + 1;
-                        
-                        const comment = document.createElement('div');
-                        comment.className = 'border-b border-gray-100 pb-6';
-                        comment.setAttribute('data-comment-id', `api-${msg.id}`);
-                        comment.innerHTML = `
-                            <div class="comment-box">
-                                <div class="flex gap-4">
-                                    <img src="https://picsum.photos/id/${randomId}/200" alt="评论者头像" class="w-10 h-10 rounded-full opacity-0 transition-opacity duration-500" onload="this.classList.add('opacity-100')">
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <div>
-                                                <h4 class="font-medium flex items-center">
-                                                    ${msg.name || '匿名用户'}
-                                                    <span class="lv-badge bg-lv${randomLv}">LV${randomLv}</span>
-                                                </h4>
-                                                <p class="comment-date">${formatTimeAgo(msg.timestamp)}</p>
-                                            </div>
-                                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">旅行体验</span>
-                                        </div>
-                                        <p class="mb-3">${msg.content}</p>
-                                        <div class="flex items-center space-x-4 text-sm comment-actions">
-                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
-                                                <i class="fa fa-thumbs-up mr-1"></i>
-                                                <span>${formatNumber(randomLikes)}</span>
-                                            </button>
-                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="api-${msg.id}">
-                                                <i class="fa fa-reply mr-1"></i>
-                                                <span>回复</span>
-                                            </button>
-                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
-                                                <i class="fa fa-bookmark-o mr-1"></i>
-                                                <span>收藏</span>
-                                            </button>
-                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
-                                                <i class="fa fa-share-alt mr-1"></i>
-                                                <span>分享</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        
-                        commentsContainer.appendChild(comment);
-                    });
-                }
-            })
-            .catch(error => {
-                hideApiStatus();
-                console.error('获取评论错误:', error);
-                // 保持现有评论不变
-            });
-        }
-        
-        // 格式化时间为"多久前"
-        function formatTimeAgo(timestamp) {
-            // 如果没有时间戳，返回默认值
-            if (!timestamp) return '刚刚';
-            
-            // 假设timestamp是毫秒级时间戳
-            const now = Date.now();
-            const seconds = Math.floor((now - timestamp) / 1000);
-            
-            if (seconds < 60) return `${seconds}秒前`;
-            if (seconds < 3600) return `${Math.floor(seconds / 60)}分钟前`;
-            if (seconds < 86400) return `${Math.floor(seconds / 3600)}小时前`;
-            if (seconds < 2592000) return `${Math.floor(seconds / 86400)}天前`;
-            if (seconds < 31536000) return `${Math.floor(seconds / 2592000)}个月前`;
-            
-            return `${Math.floor(seconds / 31536000)}年前`;
-        }
-    </script>
+<script src="static/js/comment-handler.js"></script>
 <script src="static/js/wxmmscript.js"></script>
+<script src="static/js/scriptlink.js"></script>
 </body>
 </html>
