@@ -1,0 +1,97 @@
+/* 布局及动画样式 */
+/* 动画效果 */
+.like-animation {
+    animation: likePulse 0.5s ease;
+}
+@keyframes likePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+.action-success {
+    animation: successPulse 0.6s ease;
+}
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+.notification {
+    animation: fadeInOut 2s ease;
+    opacity: 0;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+.pending-comment {
+    background-color: #fff8e1;
+    border: 1px solid #ffe082;
+    animation: pendingPulse 2s infinite;
+}
+@keyframes pendingPulse {
+    0% { background-color: #fff8e1; }
+    50% { background-color: #fff3c4; }
+    100% { background-color: #fff8e1; }
+}
+
+/* 回复模态框 */
+.reply-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.reply-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.reply-modal {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+.reply-modal-overlay.active .reply-modal {
+    transform: translateY(0);
+}
+
+/* API状态提示样式 */
+.api-status {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.api-status.show {
+    opacity: 1;
+}
+.api-status.loading {
+    background-color: #1976d2;
+}
+.api-status.success {
+    background-color: #2e7d32;
+}
+.api-status.error {
+    background-color: #c62828;
+}

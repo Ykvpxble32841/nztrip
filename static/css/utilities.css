@@ -1,0 +1,40 @@
+/* 自定义工具类 */
+@layer utilities {
+    .content-auto {
+        content-visibility: auto;
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .card-hover {
+        transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .scroll-indicator {
+        height: 3px;
+        background-color: theme('colors.primary');
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        width: 0%;
+    }
+    .sidebar-container {
+        position: relative;
+    }
+    .sidebar-sticky {
+        position: sticky;
+        top: 2rem;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+        padding-right: 1rem;
+    }
+    .nested-comment {
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        border-left: 2px solid #e5e7eb;
+    }
+}

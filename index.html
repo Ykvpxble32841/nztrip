@@ -1,0 +1,2648 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>去新西兰有什么好玩的？- TravelAnswers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="static/css/message-board.css">
+         <link rel="stylesheet" type="text/css" href="static/css/wxstyle.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E88E5',
+                        secondary: '#43A047',
+                        accent: '#FF9800',
+                        dark: '#263238',
+                        light: '#F5F7FA',
+                        lv1: '#A0AEC0',
+                        lv2: '#48BB78',
+                        lv3: '#38B2AC',
+                        lv4: '#4299E1',
+                        lv5: '#805AD5',
+                        lv6: '#ED8936',
+                        lv7: '#E53E3E',
+                        lv8: '#6B46C1',
+                        lv9: '#D69E2E',
+                        lv10: '#9F7AEA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .scroll-indicator {
+                height: 3px;
+                background-color: theme('colors.primary');
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 50;
+                width: 0%;
+            }
+            .sidebar-container {
+                position: relative;
+            }
+            .sidebar-sticky {
+                position: sticky;
+                top: 2rem;
+                max-height: calc(100vh - 4rem);
+                overflow-y: auto;
+                padding-right: 1rem;
+            }
+            .nested-comment {
+                margin-left: 1.5rem;
+                padding-left: 1.5rem;
+                border-left: 2px solid #e5e7eb;
+            }
+            .like-animation {
+                animation: likePulse 0.5s ease;
+            }
+            @keyframes likePulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.5); }
+                100% { transform: scale(1); }
+            }
+            .action-success {
+                animation: successPulse 0.6s ease;
+            }
+            @keyframes successPulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.3); }
+                100% { transform: scale(1); }
+            }
+            .notification {
+                animation: fadeInOut 2s ease;
+                opacity: 0;
+            }
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateY(-10px); }
+                20% { opacity: 1; transform: translateY(0); }
+                80% { opacity: 1; transform: translateY(0); }
+                100% { opacity: 0; transform: translateY(-10px); }
+            }
+            .pending-comment {
+                background-color: #fff8e1;
+                border: 1px solid #ffe082;
+                animation: pendingPulse 2s infinite;
+            }
+            @keyframes pendingPulse {
+                0% { background-color: #fff8e1; }
+                50% { background-color: #fff3c4; }
+                100% { background-color: #fff8e1; }
+            }
+            .reply-modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            .reply-modal-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            .reply-modal {
+                background-color: white;
+                border-radius: 12px;
+                width: 90%;
+                max-width: 600px;
+                max-height: 80vh;
+                transform: translateY(20px);
+                transition: transform 0.3s ease;
+            }
+            .reply-modal-overlay.active .reply-modal {
+                transform: translateY(0);
+            }
+            .lv-badge {
+                font-size: 0.75rem;
+                padding: 0 4px;
+                border-radius: 4px;
+                font-weight: 600;
+                color: white;
+                margin-left: 4px;
+            }
+            .comment-date {
+                font-size: 0.875rem;
+                color: #9CA3AF;
+            }
+            .comment-actions {
+                transition: all 0.2s ease;
+            }
+            .comment-actions button:hover {
+                transform: translateY(-1px);
+            }
+            .comment-box {
+                background-color: white;
+                border-radius: 12px;
+                border: 1px solid #e5e7eb;
+                padding: 1.5rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+                transition: all 0.2s ease;
+            }
+            .comment-box:hover {
+                box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+            }
+            .nested-comment-box {
+                background-color: #fafafa;
+                border-radius: 8px;
+                border: 1px solid #f0f0f0;
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+            .attraction-card {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #eee;
+            }
+            .attraction-card:last-child {
+                border-bottom: none;
+            }
+            /* API状态提示样式 */
+            .api-status {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 10px 20px;
+                border-radius: 6px;
+                color: white;
+                z-index: 1000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .api-status.show {
+                opacity: 1;
+            }
+            .api-status.loading {
+                background-color: #1976d2;
+            }
+            .api-status.success {
+                background-color: #2e7d32;
+            }
+            .api-status.error {
+                background-color: #c62828;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark">
+    <!-- 滚动进度指示器 -->
+    <div id="scrollIndicator" class="scroll-indicator"></div>
+
+    <!-- API状态提示 -->
+    <div id="apiStatus" class="api-status"></div>
+    
+    <!-- 隐藏的API提交表单 -->
+    <form id="apiForm" class="hidden">
+        <input type="hidden" name="action" value="">
+        <input type="hidden" name="content" value="">
+        <input type="hidden" name="parent_id" value="">
+        <input type="hidden" name="name" value="当前用户">
+        <input type="hidden" name="user_level" value="5">
+    </form>
+
+    <!-- 导航栏 -->
+    <header class="sticky top-0 bg-white shadow-md z-40 transition-all duration-300" id="mainHeader">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-globe text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-primary">TravelAnswers</span>
+            </div>
+            
+            <div class="hidden md:flex items-center flex-1 max-w-xl mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="搜索旅游问题..." class="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+                    <i class="fa fa-search absolute left-4 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block px-4 py-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+                    提问
+                </button>
+                <div class="relative">
+                    <img src="https://picsum.photos/id/64/200" alt="用户头像" class="w-8 h-8 rounded-full object-cover border-2 border-primary">
+                    <span class="absolute -bottom-1 -right-1 bg-lv5 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">5</span>
+                </div>
+                <button class="md:hidden text-xl">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 移动端搜索栏 -->
+    <div class="md:hidden bg-white px-4 py-3 border-t border-gray-100">
+        <div class="relative w-full">
+            <input type="text" placeholder="搜索旅游问题..." class="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+            <i class="fa fa-search absolute left-4 top-3 text-gray-400"></i>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- 路径导航 -->
+        <div class="text-sm text-gray-500 mb-6">
+            <a href="#" class="hover:text-primary">首页</a> &gt; 
+            <a href="#" class="hover:text-primary">旅游目的地</a> &gt; 
+            <a href="#" class="hover:text-primary">大洋洲</a> &gt; 
+            <a href="#" class="hover:text-primary">新西兰</a> &gt; 
+            <span>皇后镇</span>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- 左侧主要内容 -->
+            <div class="lg:w-2/3">
+                <!-- 问题卡片 -->
+                <div class="bg-white rounded-2xl shadow-sm p-6 mb-8 transform transition-all hover:shadow-md">
+                    <h1 class="text-[clamp(1.5rem,3vw,2.25rem)] font-bold mb-4 text-dark leading-tight">
+                        去新西兰或澳洲怎么玩？求详细的旅程规划和旅游攻略
+                    </h1>
+                    
+                    <div class="flex items-center mb-6">
+                        <img src="static/picture/1678866467331204.jpg" alt="提问者头像" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-medium flex items-center">
+                                旅行者小明
+                                <span class="lv-badge bg-lv3">LV3</span>
+                            </div>
+                            <div class="text-sm text-gray-500">提问于 2025年6月15日</div>
+                        </div>
+                        <div class="ml-auto flex items-center space-x-4">
+                            <div class="flex items-center text-gray-500">
+                                <i class="fa fa-eye mr-1"></i>
+                                <span>24,589 次查看</span>
+                            </div>
+                            <div class="flex items-center text-gray-500">
+                                <i class="fa fa-comment mr-1"></i>
+                                <span>42 个回答</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-light p-4 rounded-xl border border-gray-100">
+                        <p class="text-gray-700">计划过两个月去新西兰旅游，橘子洲是必去的景点之一。想了解一下详细的游玩攻略，包括最佳游览时间、交通方式、必看景点、美食推荐以及行程安排等。希望去过的朋友能分享一下经验，谢谢！</p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">大洋洲</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">新西兰旅游</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">新西兰旅游攻略</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">新西兰</span>
+                    </div>
+                </div>
+
+                <!-- 最佳回答 -->
+                <div class="bg-white rounded-2xl shadow-sm p-6 mb-8 relative">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        最佳回答
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <img src="static/picture/1678946535439190.jpg" alt="回答者头像" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-medium flex items-center">
+                                刘美玲
+                                <span class="lv-badge bg-lv8">LV8</span>
+                            </div>
+                            <div class="text-sm text-gray-500">回答于 2025年8月10日 · 编辑于 3天前</div>
+                        </div>
+                        <div class="ml-auto bg-secondary/10 text-secondary text-sm px-3 py-1 rounded-full">
+                            环游专家
+                        </div>
+                    </div>
+                    
+                    <div class="prose max-w-none">
+                        <p class="text-lg mb-4 text-indent-2">作为五位挚友中的一员，我特别想和大家聊聊我们那场 18 天的新西兰与澳大利亚之旅。
+这趟行程精彩至极，我们从南阿尔卑斯山脉的雪域风光走到大堡礁的碧蓝海域，从羊驼牧场的生态之趣逛到艺术涂鸦街区的独特韵味。一路上，我们拍下了无数影像，也积攒了满肚子的旅行见闻。​
+这次旅行不仅让我们的友谊更加深厚，也让我们真切感受了南半球独有的自然与人文魅力。对于打算规划去新西兰旅玩的朋友，我会好好梳理这次旅行从行前准备、日程安排到风险防范的全流程经验，希望能给你们带来一些参考。</p>
+                        
+
+                         <h2 class="text-xl font-bold mt-8 mb-4 text-primary">选择的出行方式</h2>
+                        <ul class="list-disc pl-5 mb-6 space-y-2 text-indent-2">
+                           现在去新西兰、澳大利亚自由行的人越来越多，也是目前主流旅游方式。
+
+包车自由行出行灵活，没有各种限制，可以更好的融入到当地生活中，全方位了解本地人的文化，深入体验异国风情，这样的旅行才是我们想要的旅行，所以建议大家去澳大利亚游玩选择自由行。
+                            <p>有次朋友去澳大利亚自由行，途中遇到拉客的，报的价格很低，承诺的服务也很好，结果第二天跟团就被坑惨了。奉劝大家还是要找当地口碑好的旅游公司和导游来安排，稳妥一些。</li>
+
+                        </ul>
+
+                          <h2 class="text-xl font-bold mt-8 mb-4 text-primary">目的地选择的依据</h2>
+                        <ul class="list-disc pl-5 mb-6 space-y-2 text-indent-2">
+                           我们五个姐妹平日里散落在天南地北，两个在新加坡，另外三个则在国内的不同城市，各自过着忙碌的生活。紧张的工作让大家很难凑到一起见面，也正因为这样，我们才下定决心来一场 “说走就走” 的长途旅行 —— 就算要从不同的起点出发奔向同一个目的地，也要好好聚一回。</li>
+                            <p>确定目的地为新西兰与澳大利亚后，我们几个在网上查阅了大量资料，包括两国的热门景点、特色美食、最佳旅行时间等。一番研究下来，我们对即将开启的旅程充满了期待，但也深知跨国旅行的复杂性，行程规划、语言沟通、当地习俗了解等问题都摆在眼前。这时，我们在攻略网站的推荐中，找到了一位经验丰富的华人导游小吕。小吕常年在新西兰和澳大利亚带团，对两地的情况了如指掌。联系上小吕后，她极为热情，跟我们详细沟通每个人的喜好和期望。考虑到我们来自不同城市，有的从新加坡出发，有的从国内启程，小吕综合航班信息、旅行节奏以及景点分布，为我们量身定制了一套周全的旅行计划。从抵达城市的安排，到每天行程的细致规划，甚至连不同城市间的交通衔接都考虑得十分周到。</li>
+
+                        </ul>
+                                                <h2 class="text-xl font-bold mt-8 mb-4 text-primary">选择新西兰跟澳洲双国的原因</h2>
+                        <ul class="list-disc pl-5 mb-6 space-y-2">
+                            <strong>新西兰：</strong>被我们誉为"上帝遗落的后花园"，这里有雪山、湖泊、草甸、星空及峡湾等多元地貌，自然景观摄影价值极高，特别适合我们这些偏好户外活动及自然风光的女孩们。
+
+                            <p><strong>澳大利亚：</strong>作为地广人稀的多元化国家，既有悉尼、墨尔本等现代化都市，又有大洋路、大堡礁等独特自然景观及袋鼠、考拉等特色野生动物资源，完美契合我们既想探索城市又向往自然体验的需求。
+                            <p>我们的行程总计18天，我们跟联系好的华人导游小吕（Louise）经过科学规划，其中新西兰段10天，澳大利亚段8天，，确保体验张弛有度。
+
+
+                        </ul>
+                                                <h2 class="text-xl font-bold mt-8 mb-4 text-primary">入境签证办理</h2>
+                        <ul class="list-disc pl-5 mb-6 space-y-2">
+                            <strong>澳大利亚：</strong>澳大利亚对（美国、日本、韩国、新加坡、加拿大、马来西亚、文莱、中国香港、中国台湾）适用电子签证政策。
+
+
+                            <p><strong>新西兰：</strong>新西兰同样开放电子签证申请，我们提前了1-2个月启动申请程序，特别是在旅游旺季到来前。
+
+                            <p>其中我们有三个姐妹是中国境内出发，中国国内可以通过携程、飞猪等平台办理，申请材料简易，审批流程高效。
+
+
+                        </ul>
+                                                                        <h2 class="text-xl font-bold mt-8 mb-4 text-primary">行程交通工具</h2>
+                        <ul class="list-disc pl-5 mb-6 space-y-2 text-indent-2">
+                            考虑到新西兰与澳大利亚地域广阔且公共交通网络有限，我们决定采用了当地专业华人司导包车服务，这大大提升了行程便利性，也让我们有了更深度的旅游体验。
+
+
+                            <p>在这里我们要特别感谢华人导游小吕（联系方式：），她凭借对两国路网的深入了解，为我们提供了合理的行程规划，并精准把握了我们女性旅行者的摄影需求及餐饮偏好。
+
+
+
+                        </ul>
+<h2 class="text-xl font-bold mt-8 mb-4 text-primary">避坑小贴士</h2>
+                 <p class="text-sm text-gray-500 italic">
+                            1、出机场拉客的很多，小心上当受骗。</p>
+
+
+
+
+                           <p class="text-sm text-gray-500 italic">2、有的酒店前台服务员也在拉客，小心被骗。</p>
+
+
+
+                        </ul>
+
+
+                        <h2 class="text-xl font-bold mt-8 mb-4 text-primary"></h2>
+                        <!-- 景点展示 - 增加到10组 -->
+                         <div class="space-y-12">
+                            <!-- 景点1 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">到达目的地奥克兰</h3>
+                                <p class="mb-4 text-indent-2">第1天：我们从各自出发地出发奥克兰，抵达奥克兰国际机场后，入住市中心酒店，初步感知了新西兰现代都市风貌。</p>
+
+                                <img src="static/picture/1mf0r12000jaamrlqA723_R_800_10000_Q90.jpg" alt="新西兰机场" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <img src="static/picture/1-221011010033a232228.jpg" alt="新西兰机场" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">到达新西兰机场</p>
+                            </div>
+                            
+                            <!-- 景点2 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第2天：</h3>
+                                <p class="mb-4 text-indent-2">上午我们参观了《指环王》影视取景地霍比屯，体验了草屋建筑群与绿丘景观的文化沉浸；下午我们转赴罗托鲁瓦，参与了地热温泉疗养及毛利战舞文化展演。</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                                    <img src="static/picture/1277898928926618899021.jpg" alt="橘子洲头观景台" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow">
+                                    <img src="static/picture/92e805abf42b40b4c2a6bfa0091c6e0a.jpeg" alt="湘江景色" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow">
+                                </div>
+                                <p class="text-sm text-gray-500 italic">霍比屯</p>
+                            </div>
+                            
+                           <!-- 景点3 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第3天：</h3>
+                                <p class="mb-4 text-indent-2">我们从罗托鲁瓦出发，前往爱歌顿牧场，与羊驼、绵羊及奶牛进行了近距离互动；之后我们参观了怀奥塔普地热公园，欣赏了间歇泉、香槟池等地热地质奇观。</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                                      <img src="static/picture/2024-08-22_161907_916.jpg" alt="新西兰机场" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                </div>
+
+                            </div>
+                            
+                            <!-- 景点4 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第4天：</h3>
+                                <p class="mb-4 text-indent-2">我们继续前往陶波，考察了胡卡瀑布，其翡翠色水域与瀑布景观极具视觉冲击力，当晚我们夜宿陶波湖景酒店。</p>
+                                <img src="static/picture/12023-08-22_163033_608.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                               
+                            </div>
+                            
+                            <!-- 景点5 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第5天（调整日）</h3>
+                                <p class="mb-4 text-indent-2">原计划是前往特卡波，跟导游沟通决定调整为更灵活的行程：
+上午从陶波出发，我们先去了汉密尔顿花园，这里拥有多个主题花园，包括宁静的玫瑰园、日式庭院与季节性花卉展区，非常适合我们悠闲漫步与拍摄。
+中午后我们前往剑桥小镇，这座位于怀卡托河畔的小镇有着英式风情建筑与河岸风光，常有大片薰衣草或其他季节花卉点缀乡间，是绝佳的旅拍点。我们还幸运地看到了路边盛开的鲁冰花！
+</p>
+                                <img src="static/picture/20225-08-22_165840_221.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">鲁冰花</p>
+                            </div>
+                            
+                            <!-- 景点6 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第6天：</h3>
+                                <p class="mb-4 text-indent-2">我们从皇后镇转赴但尼丁，参观了这个苏格兰风情城镇的第一教堂、但尼丁火车站等历史建筑，还体验了全球最陡的鲍德温大街。
+</p>                  <img src="static/picture/20325-08-22_171915_251.png" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">第一教堂</p>
+                            </div>
+                            
+                            <!-- 景点7 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第7天：</h3>
+                                <p class="mb-4 text-indent-2">我们从提马鲁出发，前往观鲸小镇凯库拉, 开始凯库拉观鲸之旅。乘坐着专门为观鲸打造的现代双体 快船，我们在这次出海之旅中，除了鲸鱼，还可以看到 凯库拉海狗在海边岩石上懒散得晒着太阳，调皮亲人的 暗色斑纹海豚在蓝色的大海里相互追逐嬉戏，以及濒危 动物信天翁在海面上空盘旋。</p>
+
+                                <img src="static/picture/22855-08-22_172451_781.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">观鲸小镇</p>
+                            </div>
+                            
+                            <!-- 景点8 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第8天：</h3>
+                                <p class="mb-4 text-indent-2">早晨起来，离开“花园城市”基督城，前往著名观星小 镇蒂卡普。 中午到达以“星空”闻名世界的蒂卡普（Tekapo）。蒂卡普是被国际暗天协会（IDA）认定为全球七大星空保护 区之一，光污染极低，同时这里海拔高气候干燥，拥有新西兰最高的晴天率，全年大多数晚上都适合观星。</p>
+                               
+                                <img src="static/picture/202450822172926_23_148.png" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">观星小镇蒂卡普</p>
+                            </div>
+                            
+                            <!-- 景点9 -->
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第9天：</h3>
+                                <p class="mb-4 text-indent-2">早餐后前往库克山。库克山是新西兰最高的山峰，也是《 魔戒/指环王》中甘道夫大战炎魔的地方。这里终年积雪 ，是大洋洲最高的山峰，有“新西兰屋脊”之称。。磅礴 的气势，内敛的秀美，独特的冰川体验，特殊季节里大雪 山和鲁冰花的反差萌，这些景色给人们的惊奇是其他地方 所无法比拟的。</p>
+                                <img src="static/picture/20240822174241_24_148.png" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">库克山塔斯曼冰川健行</p>
+                              <p>
+                              <h3 class="text-lg font-bold mb-3">第10天：飞赴澳大利亚悉尼，开启了下一段旅程。</h3>
+
+                            </div>
+                            
+                            <!-- 景点10 -->
+
+                             <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第11天：</h3>
+                                <p class="mb-4 text-indent-2">我们抵达悉尼后，入住了环形码头区域的酒店，参观了悉尼歌剧院和悉尼海港大桥，晚上体验了渡轮夜游项目。</p>
+                               <img src="static/picture/20250718171018.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">悉尼歌剧院</p>
+                            </div>
+                             <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第12天：</h3>
+                                <p class="mb-4 text-indent-2">我们继续在悉尼探索，参观了皇家植物园、麦考利夫人座椅及邦迪海滩，还在邦迪涂鸦巷进行了文化摄影。
+</p>
+                                <img src="static/picture/20250718171807.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">动物园</p>
+                              <p>
+                        
+
+                            </div>
+          <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第13天：</h3>
+                                <p class="mb-4 text-indent-2">我们前往蓝山国家公园，欣赏了三姐妹峰等标志性景观。
+
+</p>
+                                <img src="static/picture/1mh0w12000k1wuy2k56CB_W_640_10000.png" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">蓝山国家公园</p>
+                        
+
+                            </div>
+                            <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第14天：</h3>
+                                <p class="mb-4 text-indent-2">我们从悉尼飞往墨尔本，参观了联邦广场、弗林德斯车站及霍西尔巷涂鸦街区。
+
+</p>
+                                <img src="static/picture/20250718172058.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">涂鸦街区</p>
+                             
+                            
+
+                            </div>
+     <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第15天：</h3>
+                                <p class="mb-4 text-indent-2">我们沿着大洋路、洛恩小镇、阿波罗湾及十二门徒岩。
+
+</p>
+                                <img src="static/picture/34232323-23_132810_819.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <img src="static/picture/2025071817205240.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">大洋路</p>
+                             
+                            
+
+                            </div>
+                              <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第16-17天：</h3>
+                                <p class="mb-4 text-indent-2">继续大洋路，经伦敦桥、阿德湖峡。
+</p>
+                                 <img src="static/picture/202507531711340.jpg" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                  <img src="static/picture/202507181711340.jpg " alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow mb-2">
+                                <p class="text-sm text-gray-500 italic">涂鸦街区</p>
+                             
+                            
+
+                            </div>
+                                                        <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3">第17天：</h3>
+                                <p class="mb-4 text-indent-2">我们在墨尔本进行了市区深度游玩，体验了当地的饮食文化：</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                                    <img src="static/picture/6552025-08-22_211707_379.png" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow">
+                                    <img src="static/picture/422025-08-22_211725_505.png" alt="" class="rounded-xl w-full h-auto shadow-md hover:shadow-lg transition-shadow">
+                                     <h3 class="text-lg font-bold mb-3">第18天：从墨尔本带着满满的回忆和友谊返程。</h3>    
+                                     
+                                      </div>    
+                                </div>
+
+                                <h2 class="text-xl font-bold mt-8 mb-4 text-primary">旅行专业建议与风险规避指南</h2>
+                        <ul class="list-disc pl-5 mb-6 space-y-2">
+                          <strong>回顾这次旅行，我们有以下建议想分享：</strong>
+  <li>必备装备：我们为应对新西兰多变的气候条件，准备了防水外套及专业徒步鞋具。</li>
+  <li>提前预订：我们建议提前预订热门景点门票及住宿资源，特别是峡湾游船、天空缆车及霍比屯等限量项目。</li>
+  <li>季节考量：我们注意到了南半球季节与北半球的时序差异，提前进行了气象研判及装备配置。</li>
+  <li>生态保护：我们严格遵守了野生动物保护规范，避免干扰袋鼠、考拉等原生动物。</li>
+  <li>交通选择：我们推荐采用华人司导包车服务，这模式在安全性、沟通效率及行程灵活性方面确实有显著优势。</li>
+
+
+                        </ul>
+                                       <div class="attraction-card">
+                                <h3 class="text-lg font-bold mb-3"></h3>
+                                <p class="mb-4 text-indent-2">此次新西兰-澳大利亚之行，必须感谢小吕（Louise），为我们提供了很大的帮助,细心热情的服务，让全程旅行不用操太多的心，保证了我们度假圆满结束，再给小吕（Louise）打个广告，点击这里联系她，有需要的朋友，请联系她。</p>
+                    
+                                   <p class="mt-6">希望这份攻略能帮助您更好地游览新西兰，祝您旅途愉快！如果有任何疑问，欢迎在评论区留言，我会尽力解答。</p>
+                                </div>
+
+                        </div>
+
+                        
+                    </div>
+                    
+                    <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-100">
+                        <div class="flex space-x-4">
+                            <button class="flex items-center text-gray-600 hover:text-primary transition-colors like-btn">
+                                <i class="fa fa-thumbs-up mr-1"></i>
+                                <span>5,245</span>
+                            </button>
+                            <button class="flex items-center text-gray-600 hover:text-primary transition-colors reply-btn" data-reply-to="answer">
+                                <i class="fa fa-comment mr-1"></i>
+                                <span>回复</span>
+                            </button>
+                            <button class="flex items-center text-gray-600 hover:text-primary transition-colors bookmark-btn">
+                                <i class="fa fa-bookmark-o mr-1"></i>
+                                <span>收藏</span>
+                            </button>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="flex items-center text-gray-600 hover:text-primary transition-colors share-btn">
+                                <i class="fa fa-share-alt mr-1"></i>
+                                <span>分享</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 评论区 -->
+                <div class="bg-white rounded-2xl shadow-sm p-6 mb-8">
+                    <h2 class="text-xl font-bold mb-6">评论 (42)</h2>
+                    
+                    <!-- 评论输入框 -->
+                    <div class="mb-8">
+                        <div class="flex gap-4">
+                            <img src="static/picture/64-200x200.jpg" alt="当前用户头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                            <div class="flex-1">
+                                <textarea id="commentTextarea" placeholder="分享你的新西兰旅游经历..." class="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none" rows="3"></textarea>
+                                <div class="flex justify-between mt-3">
+                                    <div class="flex items-center space-x-3">
+                                        <button class="text-gray-500 hover:text-primary transition-colors" title="上传图片">
+                                            <i class="fa fa-image"></i>
+                                        </button>
+                                        <button class="text-gray-500 hover:text-primary transition-colors" title="添加表情">
+                                            <i class="fa fa-smile-o"></i>
+                                        </button>
+                                    </div>
+                                    <button id="postCommentBtn" class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                                        发表评论
+                                    </button>
+                                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 替换原评论列表部分，添加15组图文交替的评论 -->
+<div id="commentsContainer" class="space-y-6">
+    <!-- 评论1 - 图文交替1 -->
+     <div class="border-b border-gray-100 pb-6" data-comment-id="4">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1004-200x200.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                葡萄酒爱好者Emma
+                                <span class="lv-badge bg-lv5">LV5</span>
+                            </h4>
+                            <p class="comment-date">2周前</p>
+                        </div>
+                        <span class="bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full">美食主题</span>
+                    </div>
+                    <div class="mb-3">
+                     
+                    </div>
+                    <p class="mb-3">可以给一下华人导游小吕的联系方式吗？最近我们也计划去新西兰玩一下。</p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>63</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="4">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+<div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                    <img src="static/picture/1678946535439190.jpg" alt="回复者头像" class="w-8 h-8 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+                                                                <h5 class="font-medium text-sm flex items-center">
+                                                                    长沙旅游达人
+                                                                    <span class="lv-badge bg-lv8">LV8</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">两周前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-sm mb-2">
+                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
+</p><img src="static/picture/wewhat.jpg">
+                                            <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
+                                                <p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>2352</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+<div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                   <img src="static/picture/1004-200x200.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+                                                                <h5 class="font-medium text-sm flex items-center">
+                                                                    葡萄酒爱好者Emma
+                                                                     <span class="lv-badge bg-lv5">LV5</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">一周前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="mb-3">微信已加，比网上查询旅游攻略方便了很多，谢谢分享。</p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>15</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    <div class="border-b border-gray-100 pb-6" data-comment-id="1">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1001-200x200.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                旅行摄影师Alex
+                                <span class="lv-badge bg-lv4">LV4</span>
+                            </h4>
+                            <p class="comment-date">3天前</p>
+                        </div>
+                        <span class="bg-accent/10 text-accent text-xs px-2 py-1 rounded-full">摄影主题</span>
+                    </div>
+                    <p class="mb-3">非常感谢分享！我上个月去了，确实是个拍照的好地方。</p>
+                     <div class="grid grid-cols-2 gap-2 mb-3">
+                                            <img src="static/picture/52025-08-22_220522_093.jpg" alt="" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                                            <img src="static/picture/342025-08-22_220445_256.jpg" alt="" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                                        </div>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>128</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+<div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                    <img src="static/picture/1678946535439190.jpg" alt="回复者头像" class="w-8 h-8 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+                                                                <h5 class="font-medium text-sm flex items-center">
+                                                                    长沙旅游达人
+                                                                    <span class="lv-badge bg-lv8">LV8</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">2天前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-sm mb-2">非常赞同！早上的光线确实很适合拍照，而且游客较少，可以拍到更干净的画面。</p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>8</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    <!-- 评论2 - 图文交替2 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="2">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1678947797626213.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                美食探险家Sara
+                                <span class="lv-badge bg-lv6">LV6</span>
+                            </h4>
+                            <p class="comment-date">1周前</p>
+                        </div>
+                        <span class="bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full">美食主题</span>
+                    </div>
+                    <div class="mb-3">
+                        <img src="static/picture/2312025-08-22_235702_642.jpg" alt="新西兰海鲜拼盘" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <p class="mb-3">奥克兰的海鲜市场绝对是美食爱好者的天堂！这盘海鲜拼盘包含了当天捕捞的龙虾、青口和生蚝，搭配本地白葡萄酒，简直是完美组合。市场每天早上7点开门，建议早点去才能尝到最新鲜的海产。</p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>94</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="2">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+    <div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                    <img src="static/picture/1678946535439190.jpg" alt="回复者头像" class="w-8 h-8 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+                                                                <h5 class="font-medium text-sm flex items-center">
+                                                                    长沙旅游达人
+                                                                    <span class="lv-badge bg-lv8">LV8</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">5天前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-sm mb-2">非常赞同！海鲜又大又新鲜。</p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>8</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    <!-- 评论3 - 图文交替3 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="3">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1555489924222716684.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                徒步爱好者Mike
+                                <span class="lv-badge bg-lv7">LV7</span>
+                            </h4>
+                            <p class="comment-date">2周前</p>
+                        </div>
+                        <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">徒步主题</span>
+                    </div>
+                    <p class="mb-3">米尔福德峡湾的Key Summit徒步路线是我走过的最美步道之一。这段4小时的徒步可以欣赏到峡湾的壮丽景色，途中还能看到瀑布和各种鸟类。记得带上防水装备，这里天气变化很快！</p>
+                    <div class="mb-3">
+                        <img src="static/picture/d0c8a786c9177f3ed3824c519bcea3c89e3d56cd.jpeg" alt="米尔福德峡湾徒步" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>76</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="3">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论4 - 图文交替4 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="4">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1004-200x200.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                葡萄酒爱好者Emma
+                                <span class="lv-badge bg-lv5">LV5</span>
+                            </h4>
+                            <p class="comment-date">2周前</p>
+                        </div>
+                        <span class="bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full">美食主题</span>
+                    </div>
+                    <div class="mb-3">
+                     
+                    </div>
+                    <p class="mb-3">可以给一下华人导游小吕的联系方式吗？最近我们也计划去新西兰玩一下。</p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>63</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="4">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+<div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                    <img src="static/picture/1678946535439190.jpg" alt="回复者头像" class="w-8 h-8 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+                                                                <h5 class="font-medium text-sm flex items-center">
+                                                                    长沙旅游达人
+                                                                    <span class="lv-badge bg-lv8">LV8</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">两周前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-sm mb-2">
+                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
+</p><img src="static/picture/wewhat.jpg">
+                                            <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
+                                                <p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>2352</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+<div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                   <img src="static/picture/1004-200x200.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+                                                                <h5 class="font-medium text-sm flex items-center">
+                                                                    葡萄酒爱好者Emma
+                                                                     <span class="lv-badge bg-lv5">LV5</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">一周前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="mb-3">微信已加，比网上查询旅游攻略方便了很多，谢谢分享。</p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>15</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    <!-- 评论5 - 图文交替5 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="5">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/tos-cn-avt-0015_6aabe97aaa41c3f557089d9bd558b96f~c5_300x300.jpeg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                日语老师カリナ💕
+                                <span class="lv-badge bg-lv8">LV3</span>
+                            </h4>
+                            <p class="comment-date">3周前</p>
+                        </div>
+                        <span class="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">自驾主题</span>
+                    </div>
+                    <p class="mb-3">新西兰百万年冰川❄️，这里的冰川呈现出令人难以置信的蓝色，让人难以忘怀。</p>
+                    <p class="mb-3">感谢 Louise </p>
+                    <div class="mb-3">
+                        <img src="static/picture/mf0r1322000jaamrlqA723_R_80340_10000_Q90.jpg" alt="瓦纳卡湖风光" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>156</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="5">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论6 - 图文交替6 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="6">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1-220913140533w7.png" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                亲子游妈妈Lisa
+                                <span class="lv-badge bg-lv3">LV3</span>
+                            </h4>
+                            <p class="comment-date">1个月前</p>
+                        </div>
+                        <span class="bg-pink-100 text-pink-600 text-xs px-2 py-1 rounded-full">亲子主题</span>
+                    </div>
+                    <div class="mb-3">
+                        <img src="static/picture/12023-08-22_16332323s033_608.jpg" alt="奥克兰动物园" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <p class="mb-3">带孩子们去了奥克兰动物园，这是我们全家旅行的亮点！孩子们特别喜欢近距离接触新西兰的国鸟几维鸟，动物园还有专门的儿童互动区，让孩子们可以学习关于保护濒危物种的知识。园区很大，建议安排一整天的时间。</p>
+                   <p class="mb-3"> 这次新西兰之旅我们找的就是华人向导小吕，高端定制游，花钱还不多。
+咨询的时候就给我留下了很好的印象，到达新西兰后，细节方面，都会有负责人嘱咐，在国外旅游，有个华人导游照顾真的是很省心，一次旅行让你感受到很多种不同的体验。</p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>47</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="6">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论7 - 图文交替7 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="7">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/3312125-08-23_120430_227.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                Jessica
+                                <span class="lv-badge bg-lv9">LV9</span>
+                            </h4>
+                            <p class="comment-date">1个月前</p>
+                        </div>
+                        <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">冒险主题</span>
+                    </div>
+                    <p class="mb-3">I tried the world-famous Nevis Bungy in Queenstown – it’s easily the most thrilling thing I’ve ever done! Leaping off that 134-metre-high bridge, feeling the rush of free fall, then bouncing back and forth a few times in the canyon… it was incredible. The instructors were so professional, making sure everything was safe from start to finish. And you even get a certificate to keep as a memento once you’ve done it. </p>
+                    <p class="mb-3">Big thanks to my friend Louise for being there with me!</p>
+                    <div class="mb-3">
+                        <img src="static/picture/aae24f471b403897554a2daedc237551.png" alt="内维斯蹦极" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>215</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="7">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论8 - 图文交替8 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="8">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/3245-04-23_121705_424.png" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                吴吴 Anna
+                                <span class="lv-badge bg-lv2">LV2</span>
+                            </h4>
+                            <p class="comment-date">1个月前</p>
+                        </div>
+                        <span class="bg-indigo-100 text-indigo-600 text-xs px-2 py-1 rounded-full">文化主题</span>
+                    </div>
+                    <div class="mb-3">
+                        <img src="static/picture/7442223u3_121439_458.jpg" alt="" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <p class="mb-3">谢谢你有用的推荐，参加小吕的10天团已经回家了，品质过硬，服务到位!</p>
+                    <p class="mb-3">这里安利下小吕的联系方式</p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>88</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="8">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论9 - 图文交替9 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="9">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1678946621882550.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                李春雪
+                                <span class="lv-badge bg-lv7">LV7</span>
+                            </h4>
+                            <p class="comment-date">2个月前</p>
+                        </div>
+                        <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">自然主题</span>
+                    </div>
+                    <p class="mb-3">非常感谢小吕给我们全家人提供的优质服务，陪伴家人、孩子出来旅游一趟，机会非常难得，新西兰真值得一去！</p>
+
+<p class="mb-3">我们采纳了小刘的建议：小车团自由行，一家人单独一台车，私密性强，非常安全。</p>
+                    <div class="mb-3">
+                        <img src="static/picture/31.jpg" alt="塔斯曼国家公园" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>103</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="9">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论10 - 图文交替10 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="10">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/565443_123757_238.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                滑雪爱好者Chris
+                                <span class="lv-badge bg-lv4">LV4</span>
+                            </h4>
+                            <p class="comment-date">2个月前</p>
+                        </div>
+                        <span class="bg-cyan-100 text-cyan-600 text-xs px-2 py-1 rounded-full">运动主题</span>
+                    </div>
+                    <div class="mb-3">
+                        <img src="static/picture/u=2216768879,2749458947&f.jpg" alt="皇后镇滑雪场" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <p class="mb-3"> Coronet Peak滑雪场是皇后镇最受欢迎的滑雪胜地之一，拥有适合各种水平滑雪者的滑道。我特别喜欢这里的夜滑体验，在灯光下滑雪别有一番风味。滑雪场的设施完善，租赁装备也很方便，适合滑雪新手。</p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>72</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="10">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论11 - 图文交替11 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="11">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1678946966794381.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                阿飞 Sophia
+                                <span class="lv-badge bg-lv6">LV6</span>
+                            </h4>
+                            <p class="comment-date">2天前</p>
+                        </div>
+                        <span class="bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full">休闲主题</span>
+                    </div>
+                    <p class="mb-3">可以多分享一些澳大利亚旅游攻略吗?计划下个月过去蜜月度假。</p>
+
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>91</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="11">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+<div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                     <img src="static/picture/3245-04-23_121705_424.png" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+
+                                                                                                <h4 class="font-medium flex items-center">
+                                吴吴 Anna
+                                <span class="lv-badge bg-lv2">LV2</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">2天前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-sm mb-2">
+                                                         <p class="text-sm mb-2">
+                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
+</p>
+                                            <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
+                                                <p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>6</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    <!-- 评论12 - 图文交替12 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="12">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1014-200x200.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                Paul
+                                <span class="lv-badge bg-lv8">LV8</span>
+                            </h4>
+                            <p class="comment-date">3个月前</p>
+                        </div>
+                        <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">摄影主题</span>
+                    </div>
+                    
+                    <p class="mb-3">刚刚加上小吕的联系方式，准备开启我们的新西兰之旅...</p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>132</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="12">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论13 - 图文交替13 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="13">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/428-23_133422_718.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                静静 Olivia
+                                <span class="lv-badge bg-lv5">LV5</span>
+                            </h4>
+                            <p class="comment-date">3个月前</p>
+                        </div>
+                        <span class="bg-yellow-100 text-yellow-600 text-xs px-2 py-1 rounded-full">户外主题</span>
+                    </div>
+                    <p class="mb-3">姐妹，同款哦，！</p>
+                    <div class="mb-3">
+                        <img src="static/picture/32025-08-22_204627_718.png" alt="海上皮划艇露营" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>85</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="13">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论14 - 图文交替14 -->
+    <div class="border-b border-gray-100 pb-6" data-comment-id="14">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1678947797626213.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                王震轩 Daniel
+                                <span class="lv-badge bg-lv3">LV3</span>
+                            </h4>
+                            <p class="comment-date">3天前</p>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">文化主题</span>
+                    </div>
+                    <div class="mb-3">
+                        <img src="static/picture/u=1376403724222222222222.jpg" alt="奥克兰博物馆" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <p class="mb-3"> 我是带着爸妈和爷爷去的，跟<span class="wuk_name">小吕</span>报的自由行团。因考虑到老人的身体，不敢把行程填太满和太赶，所以这次报的这个团行程比较慢，全程都比较轻松。</p>
+                                    <p>线路设计非常合理，爷爷一点感觉不到累，很符合中老年人出行，吃住方面都非常好。</p>
+                                    <p>找个澳大利亚当地的负责人为你设计路线，真的是很接地气。</p>
+                                    <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a></p></p>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>54</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="14">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评论15 - 图文交替15 -->
+    <div data-comment-id="15">
+        <div class="comment-box">
+            <div class="flex gap-4">
+                <img src="static/picture/1678947935428291.jpg" alt="评论者头像" class="w-10 h-10 rounded-full transition-opacity duration-500 opacity-100">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-medium flex items-center">
+                                张泽坤  James
+                                <span class="lv-badge bg-lv10">LV10</span>
+                            </h4>
+                            <p class="comment-date">一周前</p>
+                        </div>
+                        <span class="bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full">美食主题</span>
+                    </div>
+                    <p class="mb-3">这次我们参加了澳大利亚之旅，很幸运地遇到了小吕。</p>
+<p class="mb-3">
+我们老两口年纪比较大，也比较笨，在整个行程中，她每天都会主动关心我们，问候我们有没有需要帮忙的地方。对我们老年游客照顾有加，使我们身在异乡却感受到了感到很温暖，真可谓，不是亲人胜似亲人!</p>
+                    <div class="mb-3">
+                        <img src="static/picture/2025032115022259976.jpeg" alt="马尔堡葡萄园" class="rounded-lg w-full h-auto transition-opacity duration-500 opacity-100 hover:opacity-90 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                            <i class="fa fa-thumbs-up mr-1"></i>
+                            <span>117</span>
+                        </button>
+                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="15">
+                            <i class="fa fa-reply mr-1"></i>
+                            <span>回复</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                            <i class="fa fa-bookmark-o mr-1"></i>
+                            <span>收藏</span>
+                        </button>
+                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                            <i class="fa fa-share-alt mr-1"></i>
+                            <span>分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
+                    <!-- 加载更多评论 -->
+                    <div class="mt-8 text-center">
+                        <button id="loadMoreComments" class="px-6 py-3 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors flex items-center mx-auto">
+                            <i class="fa fa-refresh mr-2"></i> 加载更多评论
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧边栏 -->
+            <div class="lg:w-1/3 sidebar-container">
+                <div class="sidebar-sticky">
+                    <!-- 相关问题 -->
+                    <div class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+                        <h3 class="text-lg font-bold mb-4">相关问题</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#" class="flex items-start group">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">1</span>
+                                    <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">新西兰交通工具怎么选？自驾方便吗？有什么好的路线推荐？</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-start group">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">2</span>
+                                    <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">我想进行新西兰9天游，有什么方式推荐？需要提前预约吗？</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-start group">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">3</span>
+                                    <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">新西兰的有什么美食，有什么特殊的推荐？价格和味道怎么样？</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-start group">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">4</span>
+                                    <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">去新西兰适合带老人和小孩游玩吗？有没有无障碍设施？</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-start group">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm mr-3 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">5</span>
+                                    <span class="text-gray-800 hover:text-primary transition-colors line-clamp-2">我如果做游轮到达澳大利亚，想游完澳洲在去新西兰玩，行程应该怎么规划？大概行程需要多长时间？</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 长沙旅游攻略 -->
+                    <div class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+                        <h3 class="text-lg font-bold mb-4">长沙旅游攻略</h3>
+                        <div class="space-y-4">
+                            <a href="#" class="block group">
+                                <div class="relative rounded-xl overflow-hidden">
+                                    <img src="https://picsum.photos/id/1086/600/400" alt="长沙三日游攻略" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                                    <div class="absolute bottom-0 left-0 p-4 text-white">
+                                        <h4 class="font-medium">长沙三日游最佳路线</h4>
+                                        <p class="text-sm text-white/80">包含橘子洲、岳麓山等必去景点</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="block group">
+                                <div class="relative rounded-xl overflow-hidden">
+                                    <img src="https://picsum.photos/id/1087/600/400" alt="长沙美食指南" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                                    <div class="absolute bottom-0 left-0 p-4 text-white">
+                                        <h4 class="font-medium">长沙美食指南</h4>
+                                        <p class="text-sm text-white/80">从臭豆腐到剁椒鱼头</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 旅游专家 -->
+                    <div class="bg-white rounded-2xl shadow-sm p-6">
+                        <h3 class="text-lg font-bold mb-4">旅游专家</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <img src="https://picsum.photos/id/1005/200" alt="长沙旅游达人" class="w-12 h-12 rounded-full object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-medium flex items-center">
+                                        长沙旅游达人
+                                        <span class="lv-badge bg-lv8">LV8</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">回答了128个问题</p>
+                                </div>
+                                <button class="px-3 py-1 border border-primary text-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                                    关注
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <img src="https://picsum.photos/id/1025/200" alt="湖南旅行家" class="w-12 h-12 rounded-full object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-medium flex items-center">
+                                        湖南旅行家
+                                        <span class="lv-badge bg-lv7">LV7</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">回答了96个问题</p>
+                                </div>
+                                <button class="px-3 py-1 border border-primary text-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                                    关注
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <img src="https://picsum.photos/id/1074/200" alt="湘江导游" class="w-12 h-12 rounded-full object-cover">
+                                <div class="flex-1">
+                                    <h4 class="font-medium flex items-center">
+                                        湘江导游
+                                        <span class="lv-badge bg-lv6">LV6</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">回答了73个问题</p>
+                                </div>
+                                <button class="px-3 py-1 border border-primary text-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                                    关注
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 回复弹窗 -->
+    <div id="replyModal" class="reply-modal-overlay">
+        <div class="reply-modal">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-xl font-bold">回复</h3>
+            </div>
+            <div class="p-6">
+                <div id="replyToContent" class="mb-4 p-4 bg-light rounded-lg text-sm">
+                    <!-- 被回复的内容将显示在这里 -->
+                </div>
+                <textarea id="replyTextarea" placeholder="写下你的回复..." class="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none" rows="4"></textarea>
+            </div>
+            <div class="p-4 flex justify-end gap-3 border-t border-gray-100">
+                <button id="cancelReplyBtn" class="px-4 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors">
+                    取消
+                </button>
+                <button id="sendReplyBtn" class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                    发送回复
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分享弹窗 -->
+    <div id="shareModal" class="reply-modal-overlay">
+        <div class="reply-modal">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-xl font-bold">分享</h3>
+            </div>
+            <div class="p-6">
+                <p class="mb-4">选择分享方式：</p>
+                <div class="grid grid-cols-4 gap-4">
+                    <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors share-option" data-platform="wechat">
+                        <i class="fa fa-weixin text-xl text-green-500 mb-2"></i>
+                        <span class="text-sm">微信</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors share-option" data-platform="whatsapp">
+                        <i class="fa fa-whatsapp text-xl text-green-600 mb-2"></i>
+                        <span class="text-sm">Whatsapp</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors share-option" data-platform="facebook">
+                        <i class="fa fa-facebook text-xl text-blue-600 mb-2"></i>
+                        <span class="text-sm">Facebook</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors share-option" data-platform="x">
+                        <i class="fa fa-twitter text-xl text-sky-500 mb-2"></i>
+                        <span class="text-sm">X推特</span>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4 flex justify-end gap-3 border-t border-gray-100">
+                <button id="cancelShareBtn" class="px-4 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors">
+                    取消
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-globe text-primary text-2xl"></i>
+                        <span class="text-xl font-bold">TravelAnswers</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">全球领先的旅游问答社区，分享你的旅行经验，获取专业的旅游建议。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-medium mb-4">目的地</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">亚洲</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">欧洲</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">北美洲</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">南美洲</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">非洲</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">大洋洲</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-medium mb-4">旅行类型</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">休闲度假</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">文化体验</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">探险旅行</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">美食之旅</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">亲子旅行</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">蜜月旅行</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-medium mb-4">关于我们</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">社区介绍</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">加入我们</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">使用条款</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 TravelAnswers. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- 通知容器 -->
+    <div id="notificationContainer" class="fixed top-20 right-6 z-50"></div>
+
+    <!-- JavaScript -->
+    <script>
+        // 存储当前回复的目标ID
+        let currentReplyTo = null;
+        let currentShareTarget = null;
+        
+        // API地址
+        const API_URL = 'https://autr.1c.q56.dpdns.org/3/api.php';
+        
+        // 显示API状态提示
+        function showApiStatus(message, type = 'loading') {
+            const statusEl = document.getElementById('apiStatus');
+            statusEl.textContent = message;
+            statusEl.className = 'api-status';
+            statusEl.classList.add(type);
+            statusEl.classList.add('show');
+            
+            // 3秒后隐藏
+            if (type !== 'loading') {
+                setTimeout(() => {
+                    statusEl.classList.remove('show');
+                }, 3000);
+            }
+            
+            return statusEl;
+        }
+        
+        // 隐藏API状态提示
+        function hideApiStatus() {
+            const statusEl = document.getElementById('apiStatus');
+            statusEl.classList.remove('show');
+        }
+        
+        // 滚动进度指示器
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollIndicator").style.width = scrolled + "%";
+            
+            // 导航栏滚动效果
+            const header = document.getElementById("mainHeader");
+            if (winScroll > 50) {
+                header.classList.add("py-2");
+                header.classList.remove("py-3");
+            } else {
+                header.classList.add("py-3");
+                header.classList.remove("py-2");
+            }
+            
+            // 返回顶部按钮显示/隐藏
+            const backToTopBtn = document.getElementById("backToTop");
+            if (winScroll > 300) {
+                backToTopBtn.classList.remove("opacity-0", "invisible");
+                backToTopBtn.classList.add("opacity-100", "visible");
+            } else {
+                backToTopBtn.classList.add("opacity-0", "invisible");
+                backToTopBtn.classList.remove("opacity-100", "visible");
+            }
+        });
+        
+        // 返回顶部功能
+        document.getElementById("backToTop").addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+        
+        // 图片加载动画
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll("img:not([onload])");
+            images.forEach(img => {
+                img.classList.add("opacity-0", "transition-opacity", "duration-500");
+                img.onload = function() {
+                    img.classList.remove("opacity-0");
+                    img.classList.add("opacity-100");
+                }
+                // 如果图片已经缓存
+                if (img.complete) {
+                    img.classList.remove("opacity-0");
+                    img.classList.add("opacity-100");
+                }
+            });
+            
+            // 页面加载时获取评论
+            //fetchComments();
+        });
+        
+        // 点赞功能
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.like-btn')) {
+                const likeBtn = e.target.closest('.like-btn');
+                const icon = likeBtn.querySelector('i');
+                const countSpan = likeBtn.querySelector('span');
+                
+                // 移除逗号并转换为数字
+                let count = parseInt(countSpan.textContent.replace(/,/g, ''));
+                
+                // 检查是否已经点赞
+                if (icon.classList.contains('text-primary')) {
+                    // 取消点赞
+                    icon.classList.remove('text-primary');
+                    countSpan.textContent = formatNumber(count - 1);
+                } else {
+                    // 点赞
+                    icon.classList.add('text-primary', 'like-animation');
+                    countSpan.textContent = formatNumber(count + 1);
+                    
+                    // 移除动画类，以便下次点击可以重新触发
+                    setTimeout(() => {
+                        icon.classList.remove('like-animation');
+                    }, 500);
+                }
+            }
+        });
+        
+        // 收藏功能
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.bookmark-btn')) {
+                const bookmarkBtn = e.target.closest('.bookmark-btn');
+                const icon = bookmarkBtn.querySelector('i');
+                const text = bookmarkBtn.querySelector('span');
+                
+                // 检查是否已经收藏
+                if (icon.classList.contains('fa-bookmark')) {
+                    // 取消收藏
+                    icon.classList.remove('fa-bookmark', 'text-primary', 'action-success');
+                    icon.classList.add('fa-bookmark-o');
+                    text.textContent = '收藏';
+                    showNotification('已取消收藏');
+                } else {
+                    // 收藏
+                    icon.classList.remove('fa-bookmark-o');
+                    icon.classList.add('fa-bookmark', 'text-primary', 'action-success');
+                    text.textContent = '已收藏';
+                    showNotification('收藏成功');
+                    
+                    // 移除动画类，以便下次点击可以重新触发
+                    setTimeout(() => {
+                        icon.classList.remove('action-success');
+                    }, 600);
+                }
+            }
+        });
+        
+        // 分享按钮点击事件
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.share-btn')) {
+                const shareBtn = e.target.closest('.share-btn');
+                currentShareTarget = shareBtn.closest('[data-comment-id]') ? 
+                                    shareBtn.closest('[data-comment-id]').getAttribute('data-comment-id') : 
+                                    'answer';
+                
+                // 显示分享弹窗
+                document.getElementById('shareModal').classList.add('active');
+                
+                // 阻止事件冒泡
+                e.stopPropagation();
+            }
+        });
+        
+        // 分享选项点击事件
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.share-option')) {
+                const shareOption = e.target.closest('.share-option');
+                const platform = shareOption.getAttribute('data-platform');
+                const icon = shareOption.querySelector('i');
+                
+                // 添加成功动画
+                icon.classList.add('action-success', 'text-green-500');
+                
+                // 根据不同平台显示不同消息
+                let message = '';
+                switch(platform) {
+                    case 'wechat':
+                        message = '已分享到微信';
+                        break;
+                    case 'whatsapp':
+                        message = '已分享到Whatsapp';
+                        break;
+                    case 'facebook':
+                        message = '已分享到Facebook';
+                        break;
+                    case 'x':
+                        message = '已分享到X推特';
+                        break;
+                }
+                
+                // 显示通知
+                showNotification(message);
+                
+                // 1秒后关闭弹窗
+                setTimeout(() => {
+                    document.getElementById('shareModal').classList.remove('active');
+                    icon.classList.remove('action-success', 'text-green-500');
+                }, 1000);
+                
+                // 阻止事件冒泡
+                e.stopPropagation();
+            }
+        });
+        
+        // 关闭分享弹窗
+        document.getElementById('cancelShareBtn').addEventListener('click', function() {
+            document.getElementById('shareModal').classList.remove('active');
+        });
+        
+        // 点击分享弹窗外部关闭弹窗
+        document.getElementById('shareModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+        
+        // 格式化数字，添加千位分隔符
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        
+        // 修复回复功能 - 确保所有回复按钮都能正确打开弹窗
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.reply-btn')) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const replyBtn = e.target.closest('.reply-btn');
+                currentReplyTo = replyBtn.getAttribute('data-reply-to');
+                
+                if (!currentReplyTo) {
+                    showNotification('回复目标错误，请重试', 'error');
+                    return;
+                }
+                
+                // 获取被回复的内容
+                let replyContent = '';
+                let replyAuthor = '';
+                let replyAuthorLv = '';
+                
+                if (currentReplyTo === 'answer') {
+                    // 回复最佳回答
+                    const authorEl = document.querySelector('.prose').closest('div').querySelector('.font-medium');
+                    if (authorEl) {
+                        replyAuthor = authorEl.firstChild.textContent.trim();
+                        replyAuthorLv = authorEl.querySelector('.lv-badge')?.textContent || '';
+                    }
+                    
+                    const answerContent = document.querySelector('.prose p:first-of-type')?.textContent || '';
+                    replyContent = answerContent.length > 100 ? answerContent.substring(0, 100) + '...' : answerContent;
+                } else {
+                    // 回复评论
+                    const commentEl = document.querySelector(`[data-comment-id="${currentReplyTo}"]`);
+                    if (commentEl) {
+                        const authorEl = commentEl.querySelector('h4, h5');
+                        if (authorEl) {
+                            replyAuthor = authorEl.firstChild.textContent.trim();
+                            replyAuthorLv = authorEl.querySelector('.lv-badge')?.textContent || '';
+                        }
+                        
+                        const commentText = commentEl.querySelector('p')?.textContent || '';
+                        replyContent = commentText.length > 100 ? commentText.substring(0, 100) + '...' : commentText;
+                    } else {
+                        showNotification('未找到回复目标，请重试', 'error');
+                        return;
+                    }
+                }
+                
+                // 显示被回复的内容
+                document.getElementById('replyToContent').innerHTML = `
+                    <div class="text-gray-500 mb-1">回复 <span class="font-medium text-gray-800 flex items-center inline-flex">${replyAuthor} ${replyAuthorLv ? `<span class="lv-badge bg-lv${replyAuthorLv.replace('LV', '')}">${replyAuthorLv}</span>` : ''}</span>：</div>
+                    <div class="text-gray-800">${replyContent}</div>
+                `;
+                
+                // 清空回复框并聚焦
+                const replyTextarea = document.getElementById('replyTextarea');
+                replyTextarea.value = '';
+                replyTextarea.focus();
+                
+                // 显示弹窗
+                document.getElementById('replyModal').classList.add('active');
+            }
+        });
+        
+        // 点击弹窗外部关闭弹窗
+        document.getElementById('replyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+        
+        // 取消回复按钮
+        document.getElementById('cancelReplyBtn').addEventListener('click', function() {
+            document.getElementById('replyModal').classList.remove('active');
+            currentReplyTo = null;
+        });
+        
+        // 发送回复按钮
+        document.getElementById('sendReplyBtn').addEventListener('click', function() {
+            sendReply();
+        });
+        
+        // 按Enter发送回复，Shift+Enter换行
+        document.getElementById('replyTextarea').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendReply();
+            }
+        });
+        
+        // 发送回复功能 - 修复版
+        function sendReply() {
+            const replyTextarea = document.getElementById('replyTextarea');
+            const replyText = replyTextarea.value.trim();
+            
+            if (replyText && currentReplyTo) {
+                // 显示API加载状态
+                const statusEl = showApiStatus('正在提交回复...');
+                
+                // 准备表单数据
+                const form = document.getElementById('apiForm');
+                form.querySelector('[name="action"]').value = 'add_message';
+                form.querySelector('[name="content"]').value = replyText;
+                form.querySelector('[name="parent_id"]').value = currentReplyTo;
+                
+                // 构建表单数据
+                const formData = new FormData(form);
+                const data = new URLSearchParams(formData.entries());
+                
+                // 发送API请求
+                fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: data
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('网络错误: ' + response.status);
+                    return response.json();
+                })
+                .then(result => {
+                    hideApiStatus();
+                    
+                    if (result.success) {
+                        // 隐藏弹窗
+                        document.getElementById('replyModal').classList.remove('active');
+                        
+                        // 显示成功通知
+                        showNotification('回复发布成功');
+                        
+                        // 创建新回复元素
+                        const newReply = document.createElement('div');
+                        newReply.className = 'nested-comment-box';
+                        newReply.setAttribute('data-comment-id', `reply-${Date.now()}`);
+                        newReply.innerHTML = `
+                            <div class="flex gap-3">
+                                <img src="https://picsum.photos/id/64/200" alt="你的头像" class="w-8 h-8 rounded-full">
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <div>
+                                            <h5 class="font-medium text-sm flex items-center">
+                                                我
+                                                <span class="lv-badge bg-lv5">LV5</span>
+                                            </h5>
+                                            <p class="text-xs text-gray-500">刚刚</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm mb-2">${replyText}</p>
+                                    <div class="flex items-center space-x-4 text-xs comment-actions">
+                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                            <i class="fa fa-thumbs-up mr-1"></i>
+                                            <span>0</span>
+                                        </button>
+                                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="${newReply.getAttribute('data-comment-id')}">
+                                            <i class="fa fa-reply mr-1"></i>
+                                            <span>回复</span>
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                            <i class="fa fa-bookmark-o mr-1"></i>
+                                            <span>收藏</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // 找到回复位置并插入
+                        if (currentReplyTo === 'answer') {
+                            // 回复最佳回答，添加到回答下方的评论区
+                            const firstComment = document.getElementById('commentsContainer').firstChild;
+                            if (firstComment) {
+                                document.getElementById('commentsContainer').insertBefore(newReply, firstComment);
+                            } else {
+                                document.getElementById('commentsContainer').appendChild(newReply);
+                            }
+                        } else {
+                            // 回复评论，添加到对应评论的嵌套评论区
+                            const commentEl = document.querySelector(`[data-comment-id="${currentReplyTo}"]`);
+                            if (commentEl) {
+                                let nestedComments = commentEl.querySelector('.nested-comment');
+                                if (!nestedComments) {
+                                    nestedComments = document.createElement('div');
+                                    nestedComments.className = 'nested-comment mt-4 space-y-4';
+                                    commentEl.appendChild(nestedComments);
+                                }
+                                nestedComments.appendChild(newReply);
+                            } else {
+                                showNotification('回复失败，未找到目标评论', 'error');
+                            }
+                        }
+                    } else {
+                        showNotification('回复失败: ' + (result.error || '未知错误'), 'error');
+                    }
+                    
+                    // 重置当前回复目标
+                    currentReplyTo = null;
+                })
+                .catch(error => {
+                    hideApiStatus();
+                    showNotification('回复失败: ' + error.message, 'error');
+                    console.error('API错误:', error);
+                });
+            } else {
+                showNotification('回复内容不能为空', 'error');
+            }
+        }
+        
+        // 显示通知
+        function showNotification(message, type = 'success') {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            
+            // 设置通知样式
+            notification.className = `notification px-4 py-3 rounded-lg shadow-lg mb-2 flex items-center ${
+                type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'
+            }`;
+            
+            // 设置通知图标
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            notification.innerHTML = `
+                <i class="fa ${icon} mr-2"></i>
+                <span>${message}</span>
+            `;
+            
+            // 添加到容器并自动移除
+            container.appendChild(notification);
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
+        }
+        
+        // 加载更多评论功能
+        let commentPage = 1;
+        const totalPages = 3; // 总共有3页评论
+        
+        document.getElementById('loadMoreComments').addEventListener('click', function() {
+            const loadMoreBtn = this;
+            const commentsContainer = document.getElementById('commentsContainer');
+            
+            // 显示加载状态
+            loadMoreBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 加载中...';
+            loadMoreBtn.disabled = true;
+            
+            // 模拟加载延迟
+            setTimeout(() => {
+                commentPage++;
+                
+                // 生成新评论
+                for (let i = 1; i <= 5; i++) {
+                    const commentNumber = (commentPage - 1) * 5 + i + 20; // 从21开始
+                    const randomId = 1090 + i + (commentPage - 1) * 5;
+                    const randomLikes = Math.floor(Math.random() * 50) + 1;
+                    const randomLv = Math.floor(Math.random() * 9) * 0; // 1-10级
+                    const randomMonths = Math.floor(Math.random() * 5) + 1; // 生成1-5的随机数
+
+                    const comment = document.createElement('div');
+                    comment.className = 'border-b border-gray-100 pb-6';
+                    comment.setAttribute('data-comment-id', `load-${commentNumber}`);
+                    comment.innerHTML = `
+                        <div class="comment-box">
+                            <div class="flex gap-4">
+                                <img src="https://picsum.photos/id/${randomId}/200" alt="评论者头像" class="w-10 h-10 rounded-full opacity-0 transition-opacity duration-500" onload="this.classList.add('opacity-100')">
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <h4 class="font-medium flex items-center">
+                                                游客${commentNumber}
+                                                <span class="lv-badge bg-lv${randomLv}">LV${randomLv}</span>
+                                            </h4>
+                                            <p class="comment-date">${commentPage/2}个月前</p>
+                                        </div>
+                                        <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">旅行体验</span>
+                                    </div>
+                                    <p class="mb-3">新西兰风景优美，我准备${randomMonths}个月后去新西兰。感谢分享的攻略，对我的旅行帮助很大！方便给个小吕的联系方式吗？</p>
+                                    <div class="flex items-center space-x-4 text-sm comment-actions">
+                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                            <i class="fa fa-thumbs-up mr-1"></i>
+                                            <span>${formatNumber(randomLikes)}</span>
+                                        </button>
+                                        <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="load-${commentNumber}">
+                                            <i class="fa fa-reply mr-1"></i>
+                                            <span>回复</span>
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                            <i class="fa fa-bookmark-o mr-1"></i>
+                                            <span>收藏</span>
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                                            <i class="fa fa-share-alt mr-1"></i>
+                                            <span>分享</span>
+                                        </button>
+                                    </div>
+ <div class="nested-comment mt-4 space-y-4">
+                                            <div class="nested-comment-box" data-comment-id="1-1">
+                                                <div class="flex gap-3">
+                                                    <img src="static/picture/1678946535439190.jpg" alt="回复者头像" class="w-8 h-8 rounded-full transition-opacity duration-500 opacity-100">
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-start mb-1">
+                                                            <div>
+                                                                <h5 class="font-medium text-sm flex items-center">
+                                                                    长沙旅游达人
+                                                                    <span class="lv-badge bg-lv8">LV8</span>
+                                                                </h5>
+                                                                <p class="text-xs text-gray-500">两天前</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-sm mb-2">
+                                                            <p><span class="wuk_name">小刘</span>的微信号 <a href="javascript:void(0);" onclick="copyAndHandleWechat()" class="wechat-link">
+  <span id="wechat_id" class="wuk_weixin">NZtrip1</span> </a><span class="tishi"> [点击即可复制，转到微信加好友，免费咨询定制澳洲行程] </span>,WhatsApp号 <a href="https://wa.me/61493385079?text=我想了解新西兰的相关行程" target="_blank" class="whatsapp-link"><span class="wuk_weixin">+ 61 493 385 079</span></a>
+</p><img src="static/picture/wewhat.jpg">
+                                            <p><a href="https://autraveling.com/contact/"><span style="font-weight:bold;color: red;">也可以直接点这里，在线联系，或者留言</span></a>
+                                                <p>
+                                                        <div class="flex items-center space-x-4 text-xs comment-actions">
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                                <span>${formatNumber(randomLikes)}</span>
+                                                            </button>
+                                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="1-1">
+                                                                <i class="fa fa-reply mr-1"></i>
+                                                                <span>回复</span>
+                                                            </button>
+                                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                                <span>收藏</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    `;
+                    
+                    // 添加到评论容器
+                    commentsContainer.appendChild(comment);
+                }
+                
+                // 恢复按钮状态
+                loadMoreBtn.disabled = false;
+                
+                // 如果是最后一页，隐藏加载更多按钮
+                if (commentPage >= totalPages) {
+                    loadMoreBtn.innerHTML = '没有更多评论了';
+                    loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    loadMoreBtn.disabled = true;
+                } else {
+                    loadMoreBtn.innerHTML = '<i class="fa fa-refresh mr-2"></i> 加载更多评论';
+                }
+                
+            }, 1000);
+        });
+        
+        // 发表评论功能
+        document.getElementById('postCommentBtn').addEventListener('click', function() {
+            const textarea = document.getElementById('commentTextarea');
+            const commentText = textarea.value.trim();
+            const commentsContainer = document.getElementById('commentsContainer');
+            
+            if (commentText) {
+                // 显示API加载状态
+                const statusEl = showApiStatus('正在提交评论...');
+                
+                // 准备表单数据
+                const form = document.getElementById('apiForm');
+                form.querySelector('[name="action"]').value = 'add_message';
+                form.querySelector('[name="content"]').value = commentText;
+                form.querySelector('[name="parent_id"]').value = '';
+                
+                // 构建表单数据
+                const formData = new FormData(form);
+                const data = new URLSearchParams(formData.entries());
+                
+                // 发送API请求
+                fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: data
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('网络错误: ' + response.status);
+                    return response.json();
+                })
+                .then(result => {
+                    hideApiStatus();
+                    
+                    if (result.success) {
+                        // 清空评论框
+                        textarea.value = '';
+                        
+                        // 显示成功通知
+                        showNotification('评论发布成功');
+                        
+                        // 创建新评论元素
+                        const newComment = document.createElement('div');
+                        newComment.className = 'border-b border-gray-100 pb-6';
+                        newComment.setAttribute('data-comment-id', `new-${Date.now()}`);
+                        newComment.innerHTML = `
+                            <div class="comment-box">
+                                <div class="flex gap-4">
+                                    <img src="https://picsum.photos/id/64/200" alt="你的头像" class="w-10 h-10 rounded-full">
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <div>
+                                                <h4 class="font-medium flex items-center">
+                                                    我
+                                                    <span class="lv-badge bg-lv5">LV5</span>
+                                                </h4>
+                                                <p class="comment-date">刚刚</p>
+                                            </div>
+                                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">旅行体验</span>
+                                        </div>
+                                        <p class="mb-3">${commentText}</p>
+                                        <div class="flex items-center space-x-4 text-sm comment-actions">
+                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                <span>0</span>
+                                            </button>
+                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="${newComment.getAttribute('data-comment-id')}">
+                                                <i class="fa fa-reply mr-1"></i>
+                                                <span>回复</span>
+                                            </button>
+                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                <span>收藏</span>
+                                            </button>
+                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                                                <i class="fa fa-share-alt mr-1"></i>
+                                                <span>分享</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // 将新评论添加到评论列表顶部
+                        const firstComment = commentsContainer.firstChild;
+                        if (firstComment) {
+                            commentsContainer.insertBefore(newComment, firstComment);
+                        } else {
+                            commentsContainer.appendChild(newComment);
+                        }
+                    } else {
+                        showNotification('评论失败: ' + (result.error || '未知错误'), 'error');
+                    }
+                })
+                .catch(error => {
+                    hideApiStatus();
+                    showNotification('评论失败: ' + error.message, 'error');
+                    console.error('API错误:', error);
+                });
+            } else {
+                showNotification('评论内容不能为空', 'error');
+            }
+        });
+        
+        // 从API获取评论
+        function fetchComments() {
+            // 显示API加载状态
+            const statusEl = showApiStatus('正在加载评论...');
+            
+            // 准备请求数据
+            const data = new URLSearchParams({
+                'action': 'get_messages'
+            });
+            
+            // 发送API请求
+            fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: data
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('获取评论失败: ' + response.status);
+                return response.json();
+            })
+            .then(result => {
+                hideApiStatus();
+                
+                if (result.success && result.messages && result.messages.length > 0) {
+                    const commentsContainer = document.getElementById('commentsContainer');
+                    
+                    // 清空现有评论（保留结构）
+                    commentsContainer.innerHTML = '';
+                    
+                    // 添加从API获取的评论
+                    result.messages.forEach((msg, index) => {
+                        // 为了演示，我们使用现有评论模板并填充API数据
+                        const randomId = 1000 + (index % 20);
+                        const randomLv = (index % 10) + 1;
+                        const randomLikes = Math.floor(Math.random() * 100) + 1;
+                        
+                        const comment = document.createElement('div');
+                        comment.className = 'border-b border-gray-100 pb-6';
+                        comment.setAttribute('data-comment-id', `api-${msg.id}`);
+                        comment.innerHTML = `
+                            <div class="comment-box">
+                                <div class="flex gap-4">
+                                    <img src="https://picsum.photos/id/${randomId}/200" alt="评论者头像" class="w-10 h-10 rounded-full opacity-0 transition-opacity duration-500" onload="this.classList.add('opacity-100')">
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <div>
+                                                <h4 class="font-medium flex items-center">
+                                                    ${msg.name || '匿名用户'}
+                                                    <span class="lv-badge bg-lv${randomLv}">LV${randomLv}</span>
+                                                </h4>
+                                                <p class="comment-date">${formatTimeAgo(msg.timestamp)}</p>
+                                            </div>
+                                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">旅行体验</span>
+                                        </div>
+                                        <p class="mb-3">${msg.content}</p>
+                                        <div class="flex items-center space-x-4 text-sm comment-actions">
+                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors like-btn">
+                                                <i class="fa fa-thumbs-up mr-1"></i>
+                                                <span>${formatNumber(randomLikes)}</span>
+                                            </button>
+                                            <button class="reply-btn text-gray-500 hover:text-primary transition-colors" data-reply-to="api-${msg.id}">
+                                                <i class="fa fa-reply mr-1"></i>
+                                                <span>回复</span>
+                                            </button>
+                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors bookmark-btn">
+                                                <i class="fa fa-bookmark-o mr-1"></i>
+                                                <span>收藏</span>
+                                            </button>
+                                            <button class="flex items-center text-gray-500 hover:text-primary transition-colors share-btn">
+                                                <i class="fa fa-share-alt mr-1"></i>
+                                                <span>分享</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        commentsContainer.appendChild(comment);
+                    });
+                }
+            })
+            .catch(error => {
+                hideApiStatus();
+                console.error('获取评论错误:', error);
+                // 保持现有评论不变
+            });
+        }
+        
+        // 格式化时间为"多久前"
+        function formatTimeAgo(timestamp) {
+            // 如果没有时间戳，返回默认值
+            if (!timestamp) return '刚刚';
+            
+            // 假设timestamp是毫秒级时间戳
+            const now = Date.now();
+            const seconds = Math.floor((now - timestamp) / 1000);
+            
+            if (seconds < 60) return `${seconds}秒前`;
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}分钟前`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}小时前`;
+            if (seconds < 2592000) return `${Math.floor(seconds / 86400)}天前`;
+            if (seconds < 31536000) return `${Math.floor(seconds / 2592000)}个月前`;
+            
+            return `${Math.floor(seconds / 31536000)}年前`;
+        }
+    </script>
+<script src="static/js/wxmmscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+﻿/* 按钮容器 */
+.wxp-btn-container {
+  position: fixed;
+  right: 20px;
+  z-index: 997;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 两个图片身位间距 */
+}
+
+/* 位置控制 */
+.wxp-btn-container.top { top: 20px; }
+.wxp-btn-container.middle { 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+.wxp-btn-container.bottom { bottom: 20px; }
+
+/* 按钮样式（强化透明背景） */
+.wxp-btn-item {
+  cursor: pointer;
+  display: inline-block;
+  background-color: transparent !important;
+  border: none;
+  padding: 0;
+}
+
+.wxp-btn-image {
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: transparent !important;
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 隐藏类 */
+.wxp-btn-item.hidden { display: none; }
+
+/* 弹窗样式（保持不变） */
+.wxp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 998;
+}
+
+.wxp-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  overflow: visible;
+  transition: transform 0.3s ease-in-out;
+  font-family: Arial, sans-serif;
+}
+
+/* 弹窗其他样式保持不变... */
+.wxp-check-icon {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #07c160;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.wxp-modal-content {
+  padding: 30px 20px 20px;
+  text-align: center;
+}
+
+.wxp-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.wxp-wechat-info {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wxp-wechat-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.wxp-label { color: #666; }
+
+.wxp-wechat-id {
+  color: #f00;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.wxp-certified {
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+
+.wxp-certified-tag {
+  display: inline-block;
+  background-color: #07c160;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.wxp-qrcode {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  padding: 5px;
+}
+
+.wxp-tip {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.wxp-confirm-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #07c160;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.wxp-modal.active { transform: translate(-50%, -50%) scale(1); }
+.wxp-overlay.active { display: block; }

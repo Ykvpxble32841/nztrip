@@ -1,0 +1,28 @@
+/* 动态设置字体大小 */
+@media screen and (min-width: 1920px) and (min-width: 0px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 1680px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 1620px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 1520px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 1450px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 1360px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 1300px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 1200px){
+.container{bottom:38px;}
+}
+@media screen and (max-width: 960px){
+.container{bottom:190px;}
+}

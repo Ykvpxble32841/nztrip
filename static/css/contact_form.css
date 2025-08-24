@@ -1,0 +1,113 @@
+ B站联系表单样式 - 自定义命名空间：bilibili-contact-form 
+
+.bilibili-contact-form  {
+    margin 0;
+    padding 0;
+    box-sizing border-box;
+    font-family 'Microsoft YaHei', sans-serif;
+}
+
+.bilibili-contact-form body {
+    background-color #f5f7fa;
+    padding 20px;
+}
+
+.bilibili-contact-form .container {
+    max-width 600px;
+    margin 0 auto;
+    background-color white;
+    border-radius 8px;
+    box-shadow 0 2px 10px rgba(0,0,0,0.1);
+    padding 30px;
+}
+
+.bilibili-contact-form h1 {
+    color #FB7299;  B站粉色调 
+    text-align center;
+    margin-bottom 30px;
+    padding-bottom 15px;
+    border-bottom 1px solid #eee;
+}
+
+.bilibili-contact-form .contact-form {
+    margin-bottom 20px;
+}
+
+.bilibili-contact-form .form-group {
+    margin-bottom 20px;
+}
+
+.bilibili-contact-form label {
+    display block;
+    margin-bottom 8px;
+    font-weight bold;
+    color #333;
+}
+
+.bilibili-contact-form input, 
+.bilibili-contact-form textarea {
+    width 100%;
+    padding 12px 15px;
+    border 1px solid #ddd;
+    border-radius 4px;
+    font-size 16px;
+    transition border-color 0.3s;
+}
+
+.bilibili-contact-form inputfocus, 
+.bilibili-contact-form textareafocus {
+    outline none;
+    border-color #FB7299;
+}
+
+.bilibili-contact-form textarea {
+    min-height 120px;
+    resize vertical;
+}
+
+.bilibili-contact-form button {
+    background-color #FB7299;
+    color white;
+    border none;
+    padding 14px 24px;
+    border-radius 4px;
+    cursor pointer;
+    font-size 16px;
+    transition background-color 0.3s;
+    width 100%;
+}
+
+.bilibili-contact-form buttonhover {
+    background-color #f85a87;
+}
+
+.bilibili-contact-form .status-message {
+    padding 12px 15px;
+    margin-bottom 20px;
+    border-radius 4px;
+    display none;
+    font-size 16px;
+}
+
+.bilibili-contact-form .success {
+    background-color #e6f7ed;
+    color #2a9d54;
+    display block;
+}
+
+.bilibili-contact-form .error {
+    background-color #fff2f0;
+    color #d93025;
+    display block;
+}
+
+.bilibili-contact-form .form-group.error input, 
+.bilibili-contact-form .form-group.error textarea {
+    border-color #d93025;
+}
+
+.bilibili-contact-form .error-message {
+    color #d93025;
+    font-size 14px;
+    margin-top 5px;
+}

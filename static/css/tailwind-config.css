@@ -1,0 +1,27 @@
+/* Tailwind配置 */
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#1E88E5',
+                secondary: '#43A047',
+                accent: '#FF9800',
+                dark: '#263238',
+                light: '#F5F7FA',
+                lv1: '#A0AEC0',
+                lv2: '#48BB78',
+                lv3: '#38B2AC',
+                lv4: '#4299E1',
+                lv5: '#805AD5',
+                lv6: '#ED8936',
+                lv7: '#E53E3E',
+                lv8: '#6B46C1',
+                lv9: '#D69E2E',
+                lv10: '#9F7AEA'
+            },
+            fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+        }
+    }
+}
