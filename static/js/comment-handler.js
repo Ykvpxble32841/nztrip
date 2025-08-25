@@ -3,7 +3,7 @@ let currentReplyTo = null;
 let currentShareTarget = null;
 
 // API地址（保持不变）
-const API_URL = 'https://autr.1c.q56.dpdns.org/3/api.php';
+const API_URL = 'https://go.goautrip.com/newzealand/33/api.php';
 
 // 站点固定字段（标注数据来源，后端可识别）
 const SITE_FIXED_FIELDS = {
