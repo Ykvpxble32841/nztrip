@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const API_URL = 'https://autr.1c.q56.dpdns.org/3/api.php'; 
+    const API_URL = 'https://go.goautrip.com/newzealand/33/api.php'; 
 
     // DOM元素（保持不变）
     const popup = document.getElementById('infoPopup');
