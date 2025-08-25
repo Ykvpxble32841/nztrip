@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             
-            const response = await fetch('https://autr.1c.q56.dpdns.org/3-1/api.php', {
+            const response = await fetch('https://go.goautrip.com/newzealand/33/api.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
