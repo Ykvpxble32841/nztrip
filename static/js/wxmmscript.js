@@ -1,7 +1,7 @@
 // JS层面控制是否打开微信的开关
 // true: 复制后自动打开微信
 // false: 只复制，不打开微信
-let autoOpenWechat = false;
+let autoOpenWechat = true;
 
 // 你可以通过这个函数动态修改开关状态
 function setAutoOpenWechat(enable) {
@@ -87,6 +87,6 @@ function showNotification(message, type) {
     setTimeout(() => {
         notification.style.opacity = '0';
         setTimeout(() => notification.remove(), 300);
-    }, 3000);
+    }, 4000);
 }
     
